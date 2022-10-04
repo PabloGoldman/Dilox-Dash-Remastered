@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
         GroundCheck();
     }
 
-
     void Movement()
     {
         Vector2 currentVelocity = rb.velocity;
