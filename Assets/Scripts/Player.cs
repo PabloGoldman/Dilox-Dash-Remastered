@@ -40,13 +40,25 @@ public class Player : MonoBehaviour
             currentVelocity.y = jumpForce;
         }
 
+        if (Input.GetButtonDown("Vertical"))
+        {
+            speed *= -1;
+        }
+
+        rb.AddTorque(1);
+
         currentVelocity.x = speed;
         rb.velocity = currentVelocity;
     }
 
     private void GroundCheck()
     {
-        isGrounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayers);
+        isGrounded = Physics2D.OverlapCircle(transform.position, groundCheckerRadius, groundLayers);
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawSphere(transform.position, groundCheckerRadius);
     }
 
 }
