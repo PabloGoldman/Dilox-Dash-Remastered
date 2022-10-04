@@ -13,9 +13,13 @@ public class Player : MonoBehaviour
     [SerializeField] float groundCheckerRadius;
     [SerializeField] LayerMask groundLayers;
 
+    bool hasInversedGravity;
+
     bool isGrounded;
 
     Vector3 spawnPosition;
+
+    bool justSpawned;
 
     float direction;
 
@@ -23,15 +27,26 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        direction = 1;
         spawnPosition = transform.position;
+
+        Respawn();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        GroundCheck();
+        if (!justSpawned)
+        {
+            Movement();
+            GroundCheck();
+        }
+        else
+        {
+            if (Input.GetButton("Jump"))
+            {
+                justSpawned = false;
+            }
+        }
     }
 
     void Movement()
@@ -45,31 +60,52 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Vertical"))
         {
-            speed *= -1;
+            direction *= -1;
         }
 
         rb.AddTorque(1.5f);
 
-        currentVelocity.x = speed;
+        currentVelocity.x = speed * direction;
         rb.velocity = currentVelocity;
+    }
+
+    void Respawn()
+    {
+        transform.position = spawnPosition;
+        justSpawned = true;
+        rb.velocity = Vector3.zero;
+        direction = 1;
+        hasInversedGravity = false;
     }
 
     private void GroundCheck()
     {
-        isGrounded = Physics2D.OverlapCircle(transform.position, groundCheckerRadius, groundLayers);
+        if (!hasInversedGravity)
+        {
+            Vector2 offset = new Vector2(transform.position.x, transform.position.y - 0.35f);
+
+            isGrounded = Physics2D.OverlapCircle(offset, groundCheckerRadius, groundLayers);
+        }
+        else
+        {
+            Vector2 offset = new Vector2(transform.position.x, transform.position.y + 0.18f);
+
+            isGrounded = Physics2D.OverlapCircle(offset, groundCheckerRadius, groundLayers);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            transform.position = spawnPosition;
+            Respawn();
         }
     }
 
     private void OnDrawGizmos()
     {
-        //Gizmos.DrawSphere(transform.position, groundCheckerRadius);
+        Vector2 offset = new Vector2(transform.position.x, transform.position.y - 0.35f);
+        Gizmos.DrawSphere(offset, groundCheckerRadius);
     }
 
 }
