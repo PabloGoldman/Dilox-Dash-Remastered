@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     bool isGrounded;
 
+    Vector3 spawnPosition;
+
     float direction;
 
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         direction = 1;
+        spawnPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -54,6 +57,14 @@ public class Player : MonoBehaviour
     private void GroundCheck()
     {
         isGrounded = Physics2D.OverlapCircle(transform.position, groundCheckerRadius, groundLayers);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            transform.position = spawnPosition;
+        }
     }
 
     private void OnDrawGizmos()
