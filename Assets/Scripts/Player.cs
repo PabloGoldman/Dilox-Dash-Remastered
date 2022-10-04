@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     {
         Vector2 currentVelocity = rb.velocity;
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetButton("Jump") && isGrounded)
         {
             currentVelocity.y = jumpForce;
         }
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
             speed *= -1;
         }
 
-        rb.AddTorque(1);
+        rb.AddTorque(1.5f);
 
         currentVelocity.x = speed;
         rb.velocity = currentVelocity;
