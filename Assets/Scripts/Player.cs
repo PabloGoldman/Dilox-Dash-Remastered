@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float speed;
 
-    [SerializeField] Transform groundChecker;
     [SerializeField] float groundCheckerRadius;
     [SerializeField] LayerMask groundLayers;
 
@@ -104,8 +103,8 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Vector2 offset = new Vector2(transform.position.x, transform.position.y - 0.35f);
-        Gizmos.DrawSphere(offset, groundCheckerRadius);
+        //Vector2 offset = new Vector2(transform.position.x, transform.position.y + 0.18f);
+        //Gizmos.DrawSphere(offset, groundCheckerRadius);
     }
 
 }
