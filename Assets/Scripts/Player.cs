@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        rb.AddTorque(1.5f);
+    }
+
     void Movement()
     {
         Vector2 currentVelocity = rb.velocity;
@@ -62,7 +67,7 @@ public class Player : MonoBehaviour
             direction *= -1;
         }
 
-        rb.AddTorque(1.5f);
+        
 
         currentVelocity.x = speed * direction;
         rb.velocity = currentVelocity;
