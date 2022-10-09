@@ -92,6 +92,7 @@ public class Profile : MonoBehaviour
         avatarsScrollView.GetChild(newSelectedIndex).GetComponent<Image>().color = activeAvatarColor;
 
         currentAvatar.sprite = avatarsList[newSelectedIndex].image;
+        GameManager.instance.SetPlayerImage(currentAvatar.sprite);
     }
 
     // Update is called once per frame

@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
         playerData.coins -= amount;
     }
 
+    public void AddCoins()
+    {
+        playerData.coins++;
+    }
+
     public bool HasEnoughCoins(int amount)
     {
         return (playerData.coins >= amount);
@@ -51,6 +56,11 @@ public class GameManager : MonoBehaviour
         {
             coinText.text = playerData.coins.ToString();
         }
+    }
+
+    public void SetPlayerImage(Sprite img)
+    {
+        playerData.avatarSprite = img;
     }
 
     // Update is called once per frame
