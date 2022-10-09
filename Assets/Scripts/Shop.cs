@@ -7,28 +7,44 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
-    [System.Serializable] class ShopItem //Pasar a scriptable object
+    #region Singleton
+    public static Shop instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
+
+
+    [System.Serializable]
+    public class ShopItem //Pasar a scriptable object
     {
         public Sprite image;
         public int price;
         public bool isPurchased = false;
     }
 
-    [SerializeField] List<ShopItem> shopItemsList;
-
-    GameObject itemTemplate;
-    [SerializeField] Transform shopScrollView;
-
+    public List<ShopItem> shopItemsList;
     [SerializeField] Animator noCoinsAnim;
-    [SerializeField] TextMeshProUGUI coinsText;
+
+    [SerializeField] GameObject itemTemplate;
+    [SerializeField] Transform shopScrollView;
+    [SerializeField] GameObject shopPanel;
 
     Button buyButton;
 
     // Start is called before the first frame update
     void Start()
     {
-        itemTemplate = shopScrollView.GetChild(0).gameObject;
-
         int lenght = shopItemsList.Count;
 
         for (int i = 0; i < lenght; i++)
@@ -38,14 +54,20 @@ public class Shop : MonoBehaviour
             go.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItemsList[i].price.ToString();
 
             buyButton = go.transform.GetChild(2).GetComponent<Button>();
-            buyButton.interactable = !shopItemsList[i].isPurchased;
+
+            if (shopItemsList[i].isPurchased)
+            {
+                DisableBuyButton();
+            }
 
             buyButton.AddEventListener(i, OnShopItemButtonClicked);
         }
+    }
 
-        Destroy(itemTemplate);
-
-        SetUICoins();
+    void DisableBuyButton()
+    {
+        buyButton.interactable = false;
+        buyButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "PURCHASED";
     }
 
     void OnShopItemButtonClicked(int itemIndex)
@@ -57,28 +79,33 @@ public class Shop : MonoBehaviour
 
             buyButton = shopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
 
-            buyButton.interactable = false;
-            buyButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "PURCHASED";
+            DisableBuyButton();
 
-            SetUICoins();
+            GameManager.instance.UpdateAllCoinsUIText();
         }
         else
         {
             noCoinsAnim.SetTrigger("NoCoins");
             Debug.Log("Not enough coins!");
         }
-        
+
+        Profile.instance.AddAvatar(shopItemsList[itemIndex].image);
     }
 
-    void SetUICoins()
+    public void OpenShop()
     {
-        coinsText.text = GameManager.instance.coins.ToString();
+        shopPanel.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        shopPanel.SetActive(false);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
+    #region Singleton
+
     public static GameManager instance;
 
     private void Awake()
@@ -18,8 +23,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
 
+    [SerializeField] TextMeshProUGUI[] allCoinsUIText;
     public int coins;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        UpdateAllCoinsUIText();
+    }
 
     public void UseCoins(int amount)
     {
@@ -31,15 +44,17 @@ public class GameManager : MonoBehaviour
         return (coins >= amount);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void UpdateAllCoinsUIText()
     {
-        
+        foreach (TextMeshProUGUI coinText in allCoinsUIText)
+        {
+            coinText.text = coins.ToString();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
