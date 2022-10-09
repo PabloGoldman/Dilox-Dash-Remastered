@@ -38,7 +38,6 @@ public class Profile : MonoBehaviour
 
     [SerializeField] Image currentAvatar;
 
-
     GameObject g;
 
     int newSelectedIndex, previousSelectedIndex;
@@ -77,13 +76,13 @@ public class Profile : MonoBehaviour
         g.transform.GetComponent<Image>().sprite = av.image;
 
         g.transform.GetComponent<Button>().AddEventListener(avatarsList.Count - 1, OnAvatarClick);
+        g.transform.GetComponent<Image>().color = defaultAvatarColor;
     }
 
     void OnAvatarClick(int avatarIndex)
     {
         SelectAvatar(avatarIndex);
     }
-
 
     void SelectAvatar(int avatarIndex)
     {

@@ -24,16 +24,7 @@ public class Shop : MonoBehaviour
     }
     #endregion
 
-
-    [System.Serializable]
-    public class ShopItem //Pasar a scriptable object
-    {
-        public Sprite image;
-        public int price;
-        public bool isPurchased = false;
-    }
-
-    public List<ShopItem> shopItemsList;
+    public List<ShopItemSO> shopItemsList;
     [SerializeField] Animator noCoinsAnim;
 
     [SerializeField] GameObject itemTemplate;
@@ -64,12 +55,6 @@ public class Shop : MonoBehaviour
         }
     }
 
-    void DisableBuyButton()
-    {
-        buyButton.interactable = false;
-        buyButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "PURCHASED";
-    }
-
     void OnShopItemButtonClicked(int itemIndex)
     {
         if (GameManager.instance.HasEnoughCoins(shopItemsList[itemIndex].price))
@@ -86,10 +71,15 @@ public class Shop : MonoBehaviour
         else
         {
             noCoinsAnim.SetTrigger("NoCoins");
-            Debug.Log("Not enough coins!");
         }
 
         Profile.instance.AddAvatar(shopItemsList[itemIndex].image);
+    }
+
+    void DisableBuyButton()
+    {
+        buyButton.interactable = false;
+        buyButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "PURCHASED";
     }
 
     public void OpenShop()
