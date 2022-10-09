@@ -7,7 +7,7 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
-    [System.Serializable] class ShopItem
+    [System.Serializable] class ShopItem //Pasar a scriptable object
     {
         public Sprite image;
         public int price;
@@ -18,6 +18,9 @@ public class Shop : MonoBehaviour
 
     GameObject itemTemplate;
     [SerializeField] Transform shopScrollView;
+
+    [SerializeField] Animator noCoinsAnim;
+    [SerializeField] TextMeshProUGUI coinsText;
 
     Button buyButton;
 
@@ -41,17 +44,37 @@ public class Shop : MonoBehaviour
         }
 
         Destroy(itemTemplate);
+
+        SetUICoins();
     }
 
     void OnShopItemButtonClicked(int itemIndex)
     {
-        shopItemsList[itemIndex].isPurchased = true;
+        if (GameManager.instance.HasEnoughCoins(shopItemsList[itemIndex].price))
+        {
+            GameManager.instance.UseCoins(shopItemsList[itemIndex].price);
+            shopItemsList[itemIndex].isPurchased = true;
 
-        buyButton = shopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
+            buyButton = shopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
 
-        buyButton.interactable = false;
-        buyButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "PURCHASED";
+            buyButton.interactable = false;
+            buyButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "PURCHASED";
+
+            SetUICoins();
+        }
+        else
+        {
+            noCoinsAnim.SetTrigger("NoCoins");
+            Debug.Log("Not enough coins!");
+        }
+        
     }
+
+    void SetUICoins()
+    {
+        coinsText.text = GameManager.instance.coins.ToString();
+    }
+
 
     // Update is called once per frame
     void Update()
