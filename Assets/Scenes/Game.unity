@@ -257,7 +257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &366651534
 Transform:
   m_ObjectHideFlags: 0
@@ -284,9 +284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a25144a2c7d6474eafe39805da093e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 11400000, guid: 4b59c72a4a22644459fbad5e041d0db9, type: 2}
-  - {fileID: 11400000, guid: 4b59c72a4a22644459fbad5e041d0db9, type: 2}
 --- !u!114 &1019294499 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4813527865282263601, guid: 492fb9e4dfb152247b25322791555358, type: 3}
@@ -328,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1135745643
 SpriteRenderer:
   m_ObjectHideFlags: 0

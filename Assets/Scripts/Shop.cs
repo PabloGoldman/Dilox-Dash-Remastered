@@ -67,13 +67,14 @@ public class Shop : MonoBehaviour
             DisableBuyButton();
 
             GameManager.instance.UpdateAllCoinsUIText();
+
+            Profile.instance.AddAvatar(shopItemsList[itemIndex].image);
         }
         else
         {
             noCoinsAnim.SetTrigger("NoCoins");
         }
 
-        Profile.instance.AddAvatar(shopItemsList[itemIndex].image);
     }
 
     void DisableBuyButton()

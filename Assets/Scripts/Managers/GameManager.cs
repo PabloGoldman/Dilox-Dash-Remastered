@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class GameManager : MonoBehaviour
 {
     #region Singleton
@@ -28,6 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerData playerData;
 
     [SerializeField] TextMeshProUGUI[] allCoinsUIText;
+
+    public LevelSO levelToInstantiate;
 
     // Start is called before the first frame update
     void Start()
@@ -58,9 +59,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetPlayerImage(Sprite img)
+    public void SetPlayerAvatar(Sprite img)
     {
         playerData.avatarSprite = img;
+    }
+
+    public Sprite GetPlayerAvatar()
+    {
+        return playerData.avatarSprite;
     }
 
     // Update is called once per frame

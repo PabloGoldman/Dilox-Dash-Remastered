@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f45f92d362dfd46bbdf7b7a325d10d, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
+  avatarSprite: {fileID: 21300000, guid: 8fcd7cdd613fe434bacb33cce149d67d, type: 3}
   coins: 0

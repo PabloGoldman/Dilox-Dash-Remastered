@@ -7,5 +7,8 @@ public class LevelSO : ScriptableObject
 {
     public GameObject levelGameObject;
     public int levelId;
-    public bool unlocked;
+    public bool isLocked;
+
+    public string title;
+    public string description;
 }

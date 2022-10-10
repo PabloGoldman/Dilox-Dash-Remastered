@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] LevelSO[] levels;
-
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(levels[1].levelGameObject);
+        Instantiate(GameManager.instance.levelToInstantiate.levelGameObject);
     }
 
     // Update is called once per frame

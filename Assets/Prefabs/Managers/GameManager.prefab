@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa1337f16c98c043843f14cf82e4675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: e7fce454282578642b9bc1ceef28ef0f, type: 2}
   allCoinsUIText:
   - {fileID: 0}
   - {fileID: 0}
-  coins: 1
+  levelToInstantiate: {fileID: 0}

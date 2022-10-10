@@ -41,11 +41,13 @@ public class Profile : MonoBehaviour
     GameObject g;
 
     int newSelectedIndex, previousSelectedIndex;
-
+        
     // Start is called before the first frame update
     void Start()
     {
         GetAvailableAvatars();
+
+        currentAvatar.sprite = GameManager.instance.GetPlayerAvatar();
 
         newSelectedIndex = previousSelectedIndex = 0;
     }
@@ -60,7 +62,7 @@ public class Profile : MonoBehaviour
             }
         }
 
-        SelectAvatar(newSelectedIndex);
+        SelectAvatar(newSelectedIndex);  //Hay que tocar algo aca para no reiniciar el avatar cada vez q arranca la partida
     }
 
     public void AddAvatar(Sprite img)
@@ -92,7 +94,8 @@ public class Profile : MonoBehaviour
         avatarsScrollView.GetChild(newSelectedIndex).GetComponent<Image>().color = activeAvatarColor;
 
         currentAvatar.sprite = avatarsList[newSelectedIndex].image;
-        GameManager.instance.SetPlayerImage(currentAvatar.sprite);
+
+        GameManager.instance.SetPlayerAvatar(currentAvatar.sprite);
     }
 
     // Update is called once per frame

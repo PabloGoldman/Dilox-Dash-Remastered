@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGameObject: {fileID: 2671961530414347534, guid: 789874c230b666141bb10f13d63b3ee8, type: 3}
   levelId: 2
-  unlocked: 0
+  isLocked: 1
+  title: Second World
+  description: This is the Second World
