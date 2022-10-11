@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     float direction;
 
+    Vector2 currentVelocity;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -52,7 +54,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (Input.GetButton("Jump"))
+            if (IsJumping())
             {
                 justSpawned = false;
             }
@@ -66,20 +68,56 @@ public class Player : MonoBehaviour
 
     void Movement()
     {
-        Vector2 currentVelocity = rb.velocity;
+        currentVelocity = rb.velocity;
 
-        if (Input.GetButton("Jump") && isGrounded)
+        if (IsJumping() && isGrounded)
         {
-            currentVelocity.y = jumpForce;
+            Jump();
         }
 
-        if (Input.GetButtonDown("Vertical"))
+        if (IsChangingDirection())
         {
-            direction *= -1;
+            ChangeDirection();
         }
 
         currentVelocity.x = speed * direction;
         rb.velocity = currentVelocity;
+    }
+
+    bool IsChangingDirection()
+    {
+        foreach (Touch t in Input.touches)
+        {
+            if (t.position.x < Screen.width / 2 /*&& contador <= 0f*/ && speed != 0f /*&& PauseMenu.GameIsPaused == false*/)
+            {
+                return true;
+            }
+        }
+
+        return Input.GetButtonDown("Vertical");
+    }
+
+    bool IsJumping()
+    {
+        foreach (Touch t in Input.touches)
+        {
+            if (t.position.x > Screen.width / 2)
+            {
+                return true;
+            }
+        }
+
+        return Input.GetButton("Jump");
+    }
+
+    void ChangeDirection()
+    {
+        direction *= -1;
+    }
+
+    void Jump()
+    {
+        currentVelocity.y = jumpForce;
     }
 
     void Respawn()
