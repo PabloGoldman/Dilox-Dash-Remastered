@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGameObject: {fileID: 3313807125395356673, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
   levelId: 1
-  unlocked: 0
-  title: First World
+  isLocked: 0
+  title: First Level
   description: This is the First World

@@ -25,10 +25,12 @@ public class LevelSelector : MonoBehaviour
             levels[i].GetChild(0).GetComponent<TMP_Text>().text = levelsSO[i].title;
             levels[i].GetChild(1).GetComponent<TMP_Text>().text = levelsSO[i].description;
             levels[i].GetChild(3).gameObject.SetActive(levelsSO[i].isLocked);
-
-            levels[i].GetChild(2).GetComponent<LevelButton>().levelIndex = i;
-            levels[i].GetChild(2).GetComponent<LevelButton>().isLocked = levelsSO[i].isLocked;
         }
+    }
+
+    public void ChangeToGameplay()
+    {
+        GameManager.instance.ChangeToGameplay();
     }
 
     public void RightClick()

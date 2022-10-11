@@ -65,6 +65,11 @@ public class Profile : MonoBehaviour
         SelectAvatar(newSelectedIndex);  //Hay que tocar algo aca para no reiniciar el avatar cada vez q arranca la partida
     }
 
+    public void ChangeToLevelSelection()
+    {
+        GameManager.instance.ChangeToLevelSelection();
+    }
+
     public void AddAvatar(Sprite img)
     {
         if (avatarsList == null)

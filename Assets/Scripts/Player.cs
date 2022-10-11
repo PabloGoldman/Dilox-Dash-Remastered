@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] float groundCheckerRadius;
     [SerializeField] LayerMask groundLayers;
 
+    Sprite avatarSprite;
+
     bool hasInversedGravity;
 
     bool isGrounded;
@@ -22,11 +25,19 @@ public class Player : MonoBehaviour
 
     float direction;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        
+        spawnPosition = transform.position;
+
+        avatarSprite = GameManager.instance.GetPlayerAvatar();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        spawnPosition = transform.position;
+        GetComponent<SpriteRenderer>().sprite = avatarSprite;
 
         Respawn();
     }
@@ -66,8 +77,6 @@ public class Player : MonoBehaviour
         {
             direction *= -1;
         }
-
-        
 
         currentVelocity.x = speed * direction;
         rb.velocity = currentVelocity;

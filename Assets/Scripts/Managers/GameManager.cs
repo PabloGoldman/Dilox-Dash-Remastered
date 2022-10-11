@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,6 +58,19 @@ public class GameManager : MonoBehaviour
         {
             coinText.text = playerData.coins.ToString();
         }
+    }
+
+    public void ChangeToGameplay()
+    {
+        if (!levelToInstantiate.isLocked)
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
+    public void ChangeToLevelSelection()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void SetPlayerAvatar(Sprite img)
