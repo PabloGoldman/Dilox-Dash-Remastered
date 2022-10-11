@@ -295,17 +295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1085769595 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4813527866427919977, guid: 492fb9e4dfb152247b25322791555358, type: 3}
-  m_PrefabInstance: {fileID: 4813527865345100050}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1135745642
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +398,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+  timeBetweenChangeDirection: 0.5
 --- !u!61 &1135745646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -741,7 +731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3313807125395356673, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3313807125395356674, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
       propertyPath: m_RootOrder
@@ -956,6 +946,6 @@ PrefabInstance:
     - target: {fileID: 9057353700784542933, guid: 25673de7b9167124896ac1f0a9e234c6, type: 3}
       propertyPath: allCoinsUIText.Array.data[1]
       value: 
-      objectReference: {fileID: 1085769595}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25673de7b9167124896ac1f0a9e234c6, type: 3}

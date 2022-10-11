@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     [SerializeField] float groundCheckerRadius;
     [SerializeField] LayerMask groundLayers;
 
+    [SerializeField] float timeBetweenChangeDirection;
+    float counterToChangeDirection = 0;
+
     Sprite avatarSprite;
 
     bool hasInversedGravity;
@@ -30,7 +33,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+
         spawnPosition = transform.position;
 
         avatarSprite = GameManager.instance.GetPlayerAvatar();
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour
         {
             Movement();
             GroundCheck();
+            ManageCounters();
         }
         else
         {
@@ -75,7 +79,7 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        if (IsChangingDirection())
+        if (IsChangingDirection() && AbleToChangeDirection())
         {
             ChangeDirection();
         }
@@ -110,9 +114,23 @@ public class Player : MonoBehaviour
         return Input.GetButton("Jump");
     }
 
+    bool AbleToChangeDirection()
+    {
+        return counterToChangeDirection <= 0;
+    }
+
     void ChangeDirection()
     {
         direction *= -1;
+        counterToChangeDirection = timeBetweenChangeDirection;
+    }
+
+    void ManageCounters()
+    {
+        if (counterToChangeDirection > 0)
+        {
+            counterToChangeDirection -= Time.deltaTime;
+        }
     }
 
     void Jump()
