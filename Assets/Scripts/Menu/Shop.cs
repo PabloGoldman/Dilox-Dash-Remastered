@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class Shop : MonoBehaviour
 {
     #region Singleton
@@ -26,6 +25,8 @@ public class Shop : MonoBehaviour
 
     public List<ShopItemSO> shopItemsList;
     [SerializeField] Animator noCoinsAnim;
+
+    [SerializeField] CoinsUIManager coinsManager;
 
     [SerializeField] GameObject itemTemplate;
     [SerializeField] Transform shopScrollView;
@@ -66,7 +67,7 @@ public class Shop : MonoBehaviour
 
             DisableBuyButton();
 
-            GameManager.instance.UpdateAllCoinsUIText();
+            coinsManager.UpdateAllCoinsUIText();
 
             Profile.instance.AddAvatar(shopItemsList[itemIndex].image);
         }

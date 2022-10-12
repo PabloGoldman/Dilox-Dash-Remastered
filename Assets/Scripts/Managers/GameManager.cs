@@ -27,14 +27,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] PlayerData playerData;
 
-    [SerializeField] TextMeshProUGUI[] allCoinsUIText;
-
     public LevelSO levelToInstantiate;
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdateAllCoinsUIText();
+
     }
 
     public void UseCoins(int amount)
@@ -47,17 +45,14 @@ public class GameManager : MonoBehaviour
         playerData.coins++;
     }
 
+    public int GetCoins()
+    {
+        return playerData.coins;
+    }
+
     public bool HasEnoughCoins(int amount)
     {
         return (playerData.coins >= amount);
-    }
-
-    public void UpdateAllCoinsUIText()
-    {
-        foreach (TextMeshProUGUI coinText in allCoinsUIText)
-        {
-            coinText.text = playerData.coins.ToString();
-        }
     }
 
     public void ChangeToGameplay()
