@@ -73,6 +73,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void ChangeToProfile()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void SetPlayerAvatar(Sprite img)
     {
         playerData.avatarSprite = img;

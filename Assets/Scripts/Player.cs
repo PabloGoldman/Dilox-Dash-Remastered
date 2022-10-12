@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
+
+    public UnityEvent onEndGame;
 
     [SerializeField] float jumpForce;
     [SerializeField] float speed;
@@ -17,18 +20,15 @@ public class Player : MonoBehaviour
     float counterToChangeDirection = 0;
 
     Sprite avatarSprite;
-
-    bool hasInversedGravity;
-
-    bool isGrounded;
+    
+    bool inEndLevel;
 
     Vector3 spawnPosition;
-
-    bool justSpawned;
-
-    float direction;
-
     Vector2 currentVelocity;
+    float direction;
+    bool hasInversedGravity;
+    bool isGrounded;
+    bool justSpawned;
 
     private void Awake()
     {
@@ -50,13 +50,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!justSpawned)
+        if (!justSpawned && !inEndLevel)
         {
             Movement();
             GroundCheck();
             ManageCounters();
         }
-        else
+        else if(!inEndLevel)
         {
             if (IsJumping())
             {
@@ -145,6 +145,7 @@ public class Player : MonoBehaviour
         rb.velocity = Vector3.zero;
         direction = 1;
         hasInversedGravity = false;
+        inEndLevel = false;
     }
 
     private void GroundCheck()
@@ -168,6 +169,16 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Respawn();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EndLevel"))
+        {
+            Debug.Log("End level");
+            inEndLevel = true;
+            onEndGame?.Invoke();
         }
     }
 
