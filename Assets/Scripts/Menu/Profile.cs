@@ -50,6 +50,8 @@ public class Profile : MonoBehaviour
         currentAvatar.sprite = GameManager.instance.GetPlayerAvatar();
 
         newSelectedIndex = previousSelectedIndex = 0;
+
+        //Invoke(nameof(GetAvailableAvatars), 2);
     }
 
     private void GetAvailableAvatars()
@@ -103,9 +105,23 @@ public class Profile : MonoBehaviour
         GameManager.instance.SetPlayerAvatar(currentAvatar.sprite);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public object SaveState()
+    //{
+    //    return new SaveData()
+    //    {
+    //        avatarsList = this.avatarsList
+    //    };
+    //}
+
+    //public void LoadState(object state)
+    //{
+    //    var saveData = (SaveData)state;
+    //    avatarsList = saveData.avatarsList;
+    //}
+
+    //[Serializable]
+    //public struct SaveData
+    //{
+    //    public List<Avatar> avatarsList;
+    //}
 }

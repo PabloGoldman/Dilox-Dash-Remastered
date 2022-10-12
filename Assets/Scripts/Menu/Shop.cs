@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
-public class Shop : MonoBehaviour
+public class Shop : MonoBehaviour, ISaveable
 {
     #region Singleton
     public static Shop instance;
@@ -23,7 +24,10 @@ public class Shop : MonoBehaviour
     }
     #endregion
 
+    public bool[] isPurchased; //Se usa para guardar los personajes desbloqueados post partida
+
     public List<ShopItemSO> shopItemsList;
+
     [SerializeField] Animator noCoinsAnim;
 
     [SerializeField] CoinsUIManager coinsManager;
@@ -37,9 +41,14 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int lenght = shopItemsList.Count;
+        int length = shopItemsList.Count;
 
-        for (int i = 0; i < lenght; i++)
+        for (int i = 0; i < length; i++)
+        {
+            shopItemsList[i].isPurchased = isPurchased[i];
+        }
+
+        for (int i = 0; i < length; i++)
         {
             GameObject go = Instantiate(itemTemplate, shopScrollView);
             go.transform.GetChild(0).GetComponent<Image>().sprite = shopItemsList[i].image;
@@ -61,6 +70,8 @@ public class Shop : MonoBehaviour
         if (GameManager.instance.HasEnoughCoins(shopItemsList[itemIndex].price))
         {
             GameManager.instance.UseCoins(shopItemsList[itemIndex].price);
+
+            isPurchased[itemIndex] = true;
             shopItemsList[itemIndex].isPurchased = true;
 
             buyButton = shopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
@@ -94,10 +105,23 @@ public class Shop : MonoBehaviour
         shopPanel.SetActive(false);
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public object SaveState()
     {
+        return new SaveData()
+        {
+            isPurchased = this.isPurchased
+        };
+    }
 
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        isPurchased = saveData.isPurchased;
+    }
+
+    [Serializable]
+    public struct SaveData
+    {
+        public bool[] isPurchased;
     }
 }

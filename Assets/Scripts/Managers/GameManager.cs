@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, ISaveable
 {
     #region Singleton
 
@@ -25,38 +26,37 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public Action onSceneChanged;
+
     [SerializeField] PlayerData playerData;
+
+    public int playerCoins;
 
     public LevelSO levelToInstantiate;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void UseCoins(int amount)
     {
-        playerData.coins -= amount;
+        playerCoins -= amount;
     }
 
     public void AddCoins()
     {
-        playerData.coins++;
+        playerCoins++;
     }
 
     public int GetCoins()
     {
-        return playerData.coins;
+        return playerCoins;
     }
 
     public bool HasEnoughCoins(int amount)
     {
-        return (playerData.coins >= amount);
+        return (playerCoins >= amount);
     }
 
     public void ChangeToGameplay()
     {
+        onSceneChanged?.Invoke();
         if (!levelToInstantiate.isLocked)
         {
             SceneManager.LoadScene(2);
@@ -65,11 +65,13 @@ public class GameManager : MonoBehaviour
 
     public void ChangeToLevelSelection()
     {
+        onSceneChanged?.Invoke();
         SceneManager.LoadScene(1);
     }
 
     public void ChangeToProfile()
     {
+        onSceneChanged?.Invoke();
         SceneManager.LoadScene(0);
     }
 
@@ -83,9 +85,23 @@ public class GameManager : MonoBehaviour
         return playerData.avatarSprite;
     }
 
-    // Update is called once per frame
-    void Update()
+    public object SaveState()
     {
+        return new SaveData()
+        {
+            playerCoins = this.playerCoins
+        };
+    }
 
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        playerCoins = saveData.playerCoins;
+    }
+
+    [Serializable]
+    public struct SaveData
+    {
+        public int playerCoins;
     }
 }
