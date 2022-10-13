@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe47206ffd5bd97488c470a1a988faa6, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  levelGameObject: {fileID: 2671961530414347534, guid: 789874c230b666141bb10f13d63b3ee8, type: 3}
+  levelGameObject: {fileID: 3313807125395356673, guid: f70758699521f884ba149b9e88e5e7ec, type: 3}
   levelId: 2
   isLocked: 1
   title: Second World

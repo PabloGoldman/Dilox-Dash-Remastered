@@ -27,12 +27,16 @@ public class GameManager : MonoBehaviour, ISaveable
     #endregion
 
     public Action onSceneChanged;
+    public Action onLevelUnlocked;
 
     [SerializeField] PlayerData playerData;
 
     public int playerCoins;
 
     public LevelSO levelToInstantiate;
+
+    public bool[] levelsLocked;
+    public LevelSO[] levels;
 
     public void UseCoins(int amount)
     {
@@ -65,6 +69,11 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void ChangeToLevelSelection()
     {
+        for (int i = 0; i < levels.Length; i++)
+        {
+            levels[i].isLocked = levelsLocked[i];
+        }
+
         onSceneChanged?.Invoke();
         SceneManager.LoadScene(1);
     }
@@ -73,6 +82,14 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         onSceneChanged?.Invoke();
         SceneManager.LoadScene(0);
+    }
+
+    public void UnlockLevel(int index)
+    {
+        onLevelUnlocked?.Invoke();
+
+        levelsLocked[index] = false;
+        levels[index].isLocked = false;
     }
 
     public void SetPlayerAvatar(Sprite img)
@@ -89,7 +106,8 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         return new SaveData()
         {
-            playerCoins = this.playerCoins
+            playerCoins = this.playerCoins,
+            levelsUnlocked = this.levelsLocked
         };
     }
 
@@ -97,11 +115,13 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         playerCoins = saveData.playerCoins;
+        levelsLocked = saveData.levelsUnlocked;
     }
 
     [Serializable]
     public struct SaveData
     {
         public int playerCoins;
+        public bool[] levelsUnlocked;
     }
 }

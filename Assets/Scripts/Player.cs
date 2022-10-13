@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     float counterToChangeDirection = 0;
 
     Sprite avatarSprite;
-    
+
     bool inEndLevel;
 
     Vector3 spawnPosition;
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
             GroundCheck();
             ManageCounters();
         }
-        else if(!inEndLevel)
+        else if (!inEndLevel)
         {
             if (IsJumping())
             {
@@ -179,6 +179,11 @@ public class Player : MonoBehaviour
             Debug.Log("End level");
             inEndLevel = true;
             onEndGame?.Invoke();
+
+            if (true)
+            {
+                GameManager.instance.UnlockLevel(collision.GetComponent<EndLevel>().levelToUnlock);
+            }
         }
     }
 

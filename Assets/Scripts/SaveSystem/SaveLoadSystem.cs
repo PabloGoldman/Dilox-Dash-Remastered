@@ -13,12 +13,10 @@ public class SaveLoadSystem : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(savePath);
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-
             Load();
         }
         else
@@ -32,6 +30,8 @@ public class SaveLoadSystem : MonoBehaviour
     {
         Load();
         GameManager.instance.onSceneChanged += Save;
+        GameManager.instance.onLevelUnlocked += Save;
+        Shop.instance.onBuy += Save;
     }
 
     //Tengo que guardar cuando salgo de la aplicacion, y cuando cambio de escena
@@ -43,15 +43,16 @@ public class SaveLoadSystem : MonoBehaviour
     public string savePath => $"{Application.persistentDataPath}/save.txt";
 
     [ContextMenu("Save")]
-    void Save()
+    public void Save()
     {
+        Debug.Log("saved");
         var state = LoadFile();
         SaveState(state);
         SaveFile(state);
     }
 
     [ContextMenu("Load")]
-    void Load()
+    public void Load()
     {
         Debug.Log("loaded");
         var state = LoadFile();

@@ -10,12 +10,15 @@ public class Shop : MonoBehaviour, ISaveable
     #region Singleton
     public static Shop instance;
 
+    public Action onBuy;
+
     private void Awake()
     {
+        SaveLoadSystem.instance.Load();
+
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -87,6 +90,7 @@ public class Shop : MonoBehaviour, ISaveable
             noCoinsAnim.SetTrigger("NoCoins");
         }
 
+        onBuy?.Invoke();
     }
 
     void DisableBuyButton()
