@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112407858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.22, y: 62.449997, z: -14}
+  m_LocalPosition: {x: 9.4, y: 1.6499999, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3962264, g: 0.33454967, b: 0.33454967, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 1135745646}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1063,7 +1063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135745642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.22, y: 60.1, z: 0}
+  m_LocalPosition: {x: 9.4, y: -0.7, z: 0}
   m_LocalScale: {x: 1.0576, y: 1.0523, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1276,7 +1276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513934717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.22, y: 62.449997, z: -14}
+  m_LocalPosition: {x: 9.4, y: 1.6499999, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1494083060}
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3962264, g: 0.33454967, b: 0.33454967, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1369,6 +1369,7 @@ GameObject:
   - component: {fileID: 1945604092}
   - component: {fileID: 1945604094}
   - component: {fileID: 1945604093}
+  - component: {fileID: 1945604095}
   m_Layer: 5
   m_Name: EndGamePanel
   m_TagString: Untagged
@@ -1438,6 +1439,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945604091}
   m_CullTransparentMesh: 1
+--- !u!114 &1945604095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945604091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c431fc70ee767c245936a646977f2a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsUI:
+  - {fileID: 1945296178}
+  - {fileID: 2028165612}
+  - {fileID: 159283670}
 --- !u!1 &2028165612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3962264, g: 0.33454967, b: 0.33454967, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1520,17 +1537,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1539188332095216993, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
-      propertyPath: m_TagString
-      value: EndLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3313807123612984507, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 444.4689
-      objectReference: {fileID: 0}
     - target: {fileID: 3313807125395356673, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
       propertyPath: m_Name
       value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313807125395356673, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3313807125395356674, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
       propertyPath: m_RootOrder
@@ -1575,14 +1588,6 @@ PrefabInstance:
     - target: {fileID: 3313807125395356674, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606074725889854002, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.72047526
-      objectReference: {fileID: 0}
-    - target: {fileID: 3994726386408754184, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}
-      propertyPath: levelToUnlock
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d891f9188e89ff489b50d0b83e309f0, type: 3}

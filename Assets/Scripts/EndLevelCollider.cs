@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EndLevel : MonoBehaviour
+public class EndLevelCollider : MonoBehaviour
 {
     public int levelToUnlock;
 }

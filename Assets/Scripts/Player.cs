@@ -180,10 +180,7 @@ public class Player : MonoBehaviour
             inEndLevel = true;
             onEndGame?.Invoke();
 
-            if (true)
-            {
-                GameManager.instance.UnlockLevel(collision.GetComponent<EndLevel>().levelToUnlock);
-            }
+            GameManager.instance.UnlockLevel(collision.GetComponent<EndLevelCollider>().levelToUnlock);
         }
     }
 
