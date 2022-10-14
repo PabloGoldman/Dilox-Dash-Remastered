@@ -18,19 +18,19 @@ public class LevelSelector : MonoBehaviour
     void Start()
     {
         currentIndex = 0;
-        GameManager.instance.levelToInstantiate = levelsSO[currentIndex];
 
         for (int i = 0; i < levels.Length; i++)
         {
             levels[i].GetChild(0).GetComponent<TMP_Text>().text = levelsSO[i].title;
             levels[i].GetChild(1).GetComponent<TMP_Text>().text = levelsSO[i].description;
-            levels[i].GetChild(3).gameObject.SetActive(levelsSO[i].isLocked);
+
+            levels[i].GetChild(3).gameObject.SetActive(GameManager.instance.levelsLocked[i]);
         }
     }
 
     public void ChangeToGameplay()
     {
-        GameManager.instance.ChangeToGameplay();
+        GameManager.instance.ChangeToGameplay(currentIndex);
     }
 
     public void RightClick()
@@ -51,7 +51,5 @@ public class LevelSelector : MonoBehaviour
         currentIndex = (currentIndex >= levels.Length) ? 0 : currentIndex;
 
         myCinemachine.m_Follow = levels[currentIndex];
-
-        GameManager.instance.levelToInstantiate = levelsSO[currentIndex];
     }
 }

@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,10 +33,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public int playerCoins;
 
-    public LevelSO levelToInstantiate;
-
     public bool[] levelsLocked;
-    public LevelSO[] levels;
 
     public void UseCoins(int amount)
     {
@@ -58,22 +55,17 @@ public class GameManager : MonoBehaviour, ISaveable
         return (playerCoins >= amount);
     }
 
-    public void ChangeToGameplay()
+    public void ChangeToGameplay(int level)
     {
-        onSceneChanged?.Invoke();
-        if (!levelToInstantiate.isLocked)
+        if (!levelsLocked[level])
         {
-            SceneManager.LoadScene(2);
+            onSceneChanged?.Invoke();
+            SceneManager.LoadScene("Level" + level);
         }
     }
 
     public void ChangeToLevelSelection()
     {
-        for (int i = 0; i < levels.Length; i++)
-        {
-            levels[i].isLocked = levelsLocked[i];
-        }
-
         onSceneChanged?.Invoke();
         SceneManager.LoadScene(1);
     }
@@ -89,7 +81,6 @@ public class GameManager : MonoBehaviour, ISaveable
         onLevelUnlocked?.Invoke();
 
         levelsLocked[index] = false;
-        levels[index].isLocked = false;
     }
 
     public void SetPlayerAvatar(Sprite img)

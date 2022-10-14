@@ -7,11 +7,6 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         endGamePanel.SetActive(false);
-
-        if (GameManager.instance.levelToInstantiate.levelGameObject)
-        {
-            Instantiate(GameManager.instance.levelToInstantiate.levelGameObject);
-        }
     }
 
     public void AbleEndGameScreen()
