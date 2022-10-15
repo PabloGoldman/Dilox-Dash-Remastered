@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameCoin : MonoBehaviour
 {
-    CoinsManager coinsManager;
+    LevelManager coinsManager;
 
     public bool isAvailable;
 
@@ -10,11 +10,19 @@ public class GameCoin : MonoBehaviour
 
     private void Awake()
     {
-        coinsManager = FindObjectOfType<CoinsManager>();
+        coinsManager = FindObjectOfType<LevelManager>();
     }
 
     // Start is called before the first frame update
     void Start()
+    {
+        if (!isAvailable)
+        {
+            GetComponent<SpriteRenderer>().color = Color.gray;
+        }
+    }
+
+    public void SetIfAvailable()
     {
         if (!isAvailable)
         {

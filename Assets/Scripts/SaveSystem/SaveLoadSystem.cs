@@ -30,7 +30,9 @@ public class SaveLoadSystem : MonoBehaviour
     {
         Load();
         GameManager.instance.onSceneChanged += Save;
+
         GameManager.instance.onLevelUnlocked += Save;
+
         Shop.instance.onBuy += Save;
     }
 

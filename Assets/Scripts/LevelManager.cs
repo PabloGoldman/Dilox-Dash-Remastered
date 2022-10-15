@@ -1,24 +1,51 @@
 using System;
 using UnityEngine;
 
-public class CoinsManager : MonoBehaviour, ISaveable
+public class LevelManager : MonoBehaviour, ISaveable
 {
     [SerializeField] GameCoin[] gameCoins;
+
+    [SerializeField] GameObject endGamePanel;
 
     public bool[] isCoinAvailable;
 
     private void Awake()
     {
+        endGamePanel.SetActive(false);
+    }
+
+    void Start()
+    {
+        SaveLoadSystem.instance.Load();
+
+        Invoke(nameof(LoadCoinsData), 0.5f);
+    }
+
+    void LoadCoinsData()
+    {
         for (int i = 0; i < gameCoins.Length; i++)
         {
             gameCoins[i].isAvailable = isCoinAvailable[i];
+
             gameCoins[i].coinIndex = i;
+
+            gameCoins[i].SetIfAvailable();
         }
     }
-     
+
+    public void ChangeToProfile()
+    {
+        GameManager.instance.ChangeToProfile();
+    }
+
     public void DisableGameCoin(int coinIndex)
     {
         isCoinAvailable[coinIndex] = false;
+    }
+
+    public void EnableEndGameScreen()
+    {
+        endGamePanel.SetActive(true);
     }
 
     public object SaveState()

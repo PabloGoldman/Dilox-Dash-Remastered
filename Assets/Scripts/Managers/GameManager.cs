@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 
@@ -59,8 +55,8 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         if (!levelsLocked[level])
         {
-            onSceneChanged?.Invoke();
             SceneManager.LoadScene("Level" + level);
+            onSceneChanged?.Invoke();
         }
     }
 
