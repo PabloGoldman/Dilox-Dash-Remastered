@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameCoin : MonoBehaviour
 {
-    LevelManager coinsManager;
+    LevelManager levelManager;
 
     public bool isAvailable;
 
@@ -10,7 +10,7 @@ public class GameCoin : MonoBehaviour
 
     private void Awake()
     {
-        coinsManager = FindObjectOfType<LevelManager>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class GameCoin : MonoBehaviour
             {
                 GameManager.instance.AddCoins();
 
-                coinsManager.DisableGameCoin(coinIndex);
+                levelManager.DisableGameCoin(coinIndex);
 
                 isAvailable = false;
 

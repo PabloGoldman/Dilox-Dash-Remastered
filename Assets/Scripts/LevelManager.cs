@@ -5,17 +5,22 @@ public class LevelManager : MonoBehaviour, ISaveable
 {
     [SerializeField] GameCoin[] gameCoins;
 
+    public bool[] isCoinAvailable;
+
     [SerializeField] GameObject endGamePanel;
 
-    public bool[] isCoinAvailable;
+    Player player;
 
     private void Awake()
     {
+        player = FindObjectOfType<Player>();
         endGamePanel.SetActive(false);
     }
 
     void Start()
     {
+        player.onEndGame += EnableEndGameScreen;
+
         SaveLoadSystem.instance.Load();
 
         Invoke(nameof(LoadCoinsData), 0.5f);

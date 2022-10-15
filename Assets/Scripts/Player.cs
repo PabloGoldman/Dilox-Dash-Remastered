@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    public UnityEvent onEndGame;
+    public Action onEndGame;
 
     [SerializeField] float jumpForce;
     [SerializeField] float speed;
