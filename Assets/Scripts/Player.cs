@@ -32,14 +32,12 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         spawnPosition = transform.position;
-
-        avatarSprite = GameManager.instance.GetPlayerAvatar();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = avatarSprite;
+        GetComponent<SpriteRenderer>().sprite = GameManager.instance.GetPlayerAvatar(); ;
 
         Respawn();
     }

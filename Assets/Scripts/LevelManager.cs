@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     void Start()
     {
+        gameCoins = FindObjectsOfType<GameCoin>();
+
         player.onEndGame += EnableEndGameScreen;
 
         SaveLoadSystem.instance.Load();
