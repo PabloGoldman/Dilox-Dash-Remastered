@@ -16,8 +16,6 @@ public class Player : MonoBehaviour
     [SerializeField] float timeBetweenChangeDirection;
     float counterToChangeDirection = 0;
 
-    Sprite avatarSprite;
-
     bool inEndLevel;
 
     Vector3 spawnPosition;
@@ -26,6 +24,9 @@ public class Player : MonoBehaviour
     bool hasInversedGravity;
     bool isGrounded;
     bool justSpawned;
+
+    public float artificialJumpForce;
+    bool isManuallyJumping;
 
     private void Awake()
     {
@@ -83,6 +84,11 @@ public class Player : MonoBehaviour
         rb.velocity = currentVelocity;
     }
 
+    public bool ManualJump()
+    {
+        return false;
+    }
+
     bool IsChangingDirection()
     {
         foreach (Touch t in Input.touches)
@@ -98,6 +104,11 @@ public class Player : MonoBehaviour
 
     bool IsJumping()
     {
+        if (isManuallyJumping)
+        {
+            return false;
+        }
+
         foreach (Touch t in Input.touches)
         {
             if (t.position.x > Screen.width / 2)
@@ -164,6 +175,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Respawn();
+        }
+
+        if (collision.gameObject.CompareTag("BouncyIce"))
+        {
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * collision.gameObject.GetComponent<BouncyIce>().amountOfBounciness, ForceMode2D.Impulse);
         }
     }
 

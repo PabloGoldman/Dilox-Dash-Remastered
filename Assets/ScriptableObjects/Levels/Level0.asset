@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe47206ffd5bd97488c470a1a988faa6, type: 3}
-  m_Name: Level1
+  m_Name: Level0
   m_EditorClassIdentifier: 
-  title: Second World
-  description: This is the Second World
+  title: First World
+  description: This is the First World

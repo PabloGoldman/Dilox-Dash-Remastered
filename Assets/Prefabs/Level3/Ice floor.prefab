@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 619455691948024142}
   - component: {fileID: 5950781178017568447}
   m_Layer: 6
-  m_Name: piso hielo
+  m_Name: Ice floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

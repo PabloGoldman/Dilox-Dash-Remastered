@@ -1,5 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1852307958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852307960}
+  - component: {fileID: 1852307959}
+  m_Layer: 0
+  m_Name: FondoHielo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1852307960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852307958}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.325425, y: 89.83649, z: 34.799618}
+  m_LocalScale: {x: 0.53435934, y: 0.53435934, z: 0.53435934}
+  m_Children: []
+  m_Father: {fileID: 4067635295765473690}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1852307959
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852307958}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -5
+  m_Sprite: {fileID: 21300000, guid: 723e74ffdcc48ee4eb270d0afe7b7fc2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 1
+  m_Size: {x: 190.29315, y: 155.54236}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1127659812650930512
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +156,7 @@ Transform:
   - {fileID: 4067635296878119674}
   - {fileID: 4067635297088639203}
   - {fileID: 4843777923124861311}
+  - {fileID: 1852307960}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -270,8 +353,6 @@ Transform:
   - {fileID: 7937574762219601347}
   - {fileID: 7937574760879607735}
   - {fileID: 7937574761535193058}
-  - {fileID: 7937574760709655736}
-  - {fileID: 7937574760746802347}
   - {fileID: 7937574762136942742}
   - {fileID: 7937574762135397163}
   - {fileID: 7937574761036836521}
@@ -286,7 +367,6 @@ Transform:
   - {fileID: 7937574760551683397}
   - {fileID: 7937574761547618198}
   - {fileID: 7937574760355149777}
-  - {fileID: 7937574761204514898}
   - {fileID: 7937574761200615852}
   - {fileID: 7937574760867564591}
   - {fileID: 7937574761598736160}
@@ -437,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 58
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -481,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (60)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -515,7 +595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 62
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -559,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (69)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -633,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -801,7 +881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (56)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -827,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5872712366079662802, guid: 2932ce713d18e664d8e443b42af37c2f, type: 3}
       propertyPath: m_Name
-      value: piso hondo hielo (37)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7842559144501166357, guid: 2932ce713d18e664d8e443b42af37c2f, type: 3}
       propertyPath: m_Size.x
@@ -905,7 +985,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (7)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -979,7 +1059,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (27)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -1097,7 +1177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (419)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -1175,7 +1255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (45)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -1269,7 +1349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (35)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -1331,7 +1411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (3)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -1393,11 +1473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (105)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -1446,7 +1526,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (29)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -1552,7 +1632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (30)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -1590,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (51)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1374116809165872191, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Size.x
@@ -1668,7 +1748,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -1716,11 +1796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (128)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -1738,7 +1818,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 40
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -1786,23 +1866,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (129)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574762135397163 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635295838042484}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5890956971964123394 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635295838042484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7937574762135397163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635295838042484}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635295838042474
@@ -1900,7 +1980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (28)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -1918,7 +1998,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (31)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -2052,7 +2132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (68)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -2070,7 +2150,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (16)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -2204,7 +2284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (43)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -2266,18 +2346,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (115)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!1 &5890956972059799342 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635295966732120}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937574762025043207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635295966732120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5890956972059799342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635295966732120}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635297473408621
@@ -2391,7 +2471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (33)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -2425,7 +2505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (37)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1374116809165872191, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Size.x
@@ -2567,7 +2647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (32)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -2593,7 +2673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5872712366079662802, guid: 2932ce713d18e664d8e443b42af37c2f, type: 3}
       propertyPath: m_Name
-      value: piso hondo hielo (13)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7842559144501166357, guid: 2932ce713d18e664d8e443b42af37c2f, type: 3}
       propertyPath: m_Size.x
@@ -2679,7 +2759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (40)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -2813,7 +2893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (41)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -2875,7 +2955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (94)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
@@ -2928,7 +3008,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (3)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -2990,7 +3070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (23)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -3064,7 +3144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (17)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -3138,7 +3218,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (25)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -3288,7 +3368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (52)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -3306,7 +3386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (24)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -3380,7 +3460,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 56
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3424,11 +3504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (159)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -3489,7 +3569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (20)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -3623,7 +3703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (91)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -3733,7 +3813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (44)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -3767,7 +3847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 51
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -3815,7 +3895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (77)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -3905,7 +3985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (50)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -3971,11 +4051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (123)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -3997,7 +4077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 45
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -4045,23 +4125,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (139)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!1 &5890956972607386164 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635296472367682}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937574761502627869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635296472367682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5890956972607386164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635296472367682}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635296472367680
@@ -4099,7 +4179,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (2)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -4221,7 +4301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (4)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -4283,11 +4363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (61)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -4384,22 +4464,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (55)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574761437267448 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635296554508199}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5890956972680081361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635296554508199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7937574761437267448 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635296554508199}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635296554508197
@@ -4497,7 +4577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (437)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -4575,7 +4655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (25)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -4593,7 +4673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (19)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -4727,7 +4807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (29)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -4817,7 +4897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (41)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -4835,7 +4915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 42
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4879,7 +4959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (133)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -4988,7 +5068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (50)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -5006,7 +5086,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (11)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -5128,23 +5208,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (111)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!1 &5890956973377679671 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635296706314561}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937574761267108638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635296706314561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5890956973377679671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635296706314561}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635296706314567
@@ -5186,7 +5266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 43
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -5234,11 +5314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (117)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -5288,7 +5368,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (21)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -5362,7 +5442,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (41)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -5437,7 +5517,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 47
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -5485,11 +5565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (151)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -5538,7 +5618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (28)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -5600,7 +5680,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 54
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5644,7 +5724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (421)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -5684,76 +5764,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6562595, y: 0.39694214}
   m_EdgeRadius: 0
---- !u!1001 &4067635296787257869
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4067635296878119674}
-    m_Modifications:
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_RootOrder
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.3803602
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.3985195
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 113.574844
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.25352138
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_Name
-      value: piso hielo (155)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574761204514898 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635296787257869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4067635296848232235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5763,7 +5773,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (4)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -5825,7 +5835,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (15)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -5931,7 +5941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (106)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -5980,7 +5990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (5)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -6042,7 +6052,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (50)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -6132,7 +6142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 49
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -6180,7 +6190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (153)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -6274,7 +6284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (45)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -6292,7 +6302,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 41
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -6340,18 +6350,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (132)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574761036836521 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635296955479286}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5890956973080511616 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635296955479286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7937574761036836521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635296955479286}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635296955479284
@@ -6389,7 +6399,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 46
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -6437,11 +6447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (145)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -6534,7 +6544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (27)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -6552,7 +6562,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (18)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -6626,7 +6636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 44
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -6674,7 +6684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (138)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -6771,11 +6781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (120)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -6793,7 +6803,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 55
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -6841,18 +6851,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (141)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!1 &5890956973787702790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297124734576}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937574760867564591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635297124734576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5890956973787702790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297124734576}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635297124734582
@@ -6934,7 +6944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (33)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -6964,7 +6974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (36)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1374116809165872191, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Size.x
@@ -7110,7 +7120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (8)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -7159,7 +7169,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (30)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -7233,7 +7243,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (22)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -7351,7 +7361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (2)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -7359,76 +7369,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297205222252}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &4067635297226098420
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4067635296878119674}
-    m_Modifications:
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_RootOrder
-      value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8119766
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -18.76852
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 114.98483
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.25352138
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_Name
-      value: piso hielo (125)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574760746802347 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297226098420}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4067635297234011703
 PrefabInstance:
@@ -7487,22 +7427,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (62)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!1 &5890956973862909505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297234011703}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937574760740985960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635297234011703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5890956973862909505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297234011703}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635297029531703
@@ -7600,7 +7540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (23)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -7608,76 +7548,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297234795782}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &4067635297265866471
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4067635296878119674}
-    m_Modifications:
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_RootOrder
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.3803602
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.008519
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 113.574844
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.25352138
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_Name
-      value: piso hielo (124)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574760709655736 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297265866471}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4067635297289232566
 PrefabInstance:
@@ -7688,7 +7558,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -7834,7 +7704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (5)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -7924,7 +7794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637312434441141875, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
       propertyPath: m_Name
-      value: iceblock (9)
+      value: Ice block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285d2298289579044b0f75e1ad23cc0c, type: 3}
@@ -7954,7 +7824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (13)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -8076,19 +7946,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (86)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574760545141869 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297428282930}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5890956973528165956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635297428282930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7937574760545141869 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297428282930}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635297428282928
@@ -8142,7 +8012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 50
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -8190,7 +8060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (73)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -8208,7 +8078,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (6)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -8326,7 +8196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (63)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -8375,7 +8245,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (49)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -8493,18 +8363,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (64)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!1 &5890956973641857128 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297515751454}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937574760457671233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635297515751454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5890956973641857128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297515751454}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635297515751452
@@ -8542,7 +8412,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (42)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -8616,7 +8486,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (1)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -8734,7 +8604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (57)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -8756,7 +8626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 48
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -8804,23 +8674,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (152)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!1 &5890956973710196243 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297584090725}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937574760391431226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635297584090725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5890956973710196243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297584090725}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635297584090715
@@ -8858,7 +8728,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (32)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -8932,7 +8802,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (26)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -9022,7 +8892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 52
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalScale.x
@@ -9070,7 +8940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (79)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -9136,23 +9006,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (107)
+      value: Ice floor
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
---- !u!4 &7937574760366169126 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
-  m_PrefabInstance: {fileID: 4067635297625605753}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5890956973752235535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
+  m_PrefabInstance: {fileID: 4067635297625605753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7937574760366169126 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 4067635297625605753}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &4067635297625605759
@@ -9190,7 +9060,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
-      value: icy-rock-monster (12)
+      value: Ice enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8700923932912429510, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_RootOrder
@@ -9268,7 +9138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 63
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9312,7 +9182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (24)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -9330,27 +9200,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 619455691948024142, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Size.x
-      value: 10.20977
+      value: 13.568332
       objectReference: {fileID: 0}
     - target: {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Size.x
-      value: 10.195741
+      value: 13.482161
       objectReference: {fileID: 0}
     - target: {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0000014305115
+      value: -0.0000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 5950781178017568447, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 10.20977
+      value: 13.568332
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 59
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.87
+      value: -25.1907
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9390,7 +9260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (65)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -9424,7 +9294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 61
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9468,7 +9338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (67)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -9502,7 +9372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 57
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9546,7 +9416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (58)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
@@ -9580,7 +9450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_RootOrder
-      value: 60
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9624,7 +9494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616650092691075190, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
       propertyPath: m_Name
-      value: piso hielo (66)
+      value: Ice floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
