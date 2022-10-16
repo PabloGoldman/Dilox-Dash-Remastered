@@ -11,6 +11,8 @@ public class SaveLoadSystem : MonoBehaviour
 
     public static SaveLoadSystem instance;
 
+    [SerializeField] bool AbleToSave;
+
     private void Awake()
     {
         if (instance == null)
@@ -28,18 +30,24 @@ public class SaveLoadSystem : MonoBehaviour
 
     private void Start()
     {
-        Load();
-        GameManager.instance.onSceneChanged += Save;
+        if (AbleToSave)
+        {
+            Load();
+            GameManager.instance.onSceneChanged += Save;
 
-        GameManager.instance.onLevelUnlocked += Save;
+            GameManager.instance.onLevelUnlocked += Save;
 
-        Shop.instance.onBuy += Save;
+            Shop.instance.onBuy += Save;
+        }
     }
 
     //Tengo que guardar cuando salgo de la aplicacion, y cuando cambio de escena
     private void OnApplicationQuit()
     {
-        Save();
+        if (AbleToSave)
+        {
+            Save();
+        }
     }
 
     public string savePath => $"{Application.persistentDataPath}/save.txt";
