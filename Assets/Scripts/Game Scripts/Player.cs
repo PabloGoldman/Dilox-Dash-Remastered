@@ -25,9 +25,6 @@ public class Player : MonoBehaviour
     bool isGrounded;
     bool justSpawned;
 
-    public float artificialJumpForce;
-    bool isManuallyJumping;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -104,11 +101,6 @@ public class Player : MonoBehaviour
 
     bool IsJumping()
     {
-        if (isManuallyJumping)
-        {
-            return false;
-        }
-
         foreach (Touch t in Input.touches)
         {
             if (t.position.x > Screen.width / 2)
