@@ -64,7 +64,6 @@ public class SaveLoadSystem : MonoBehaviour
     [ContextMenu("Load")]
     public void Load()
     {
-        Debug.Log("loaded");
         var state = LoadFile();
         LoadState(state);
     }
