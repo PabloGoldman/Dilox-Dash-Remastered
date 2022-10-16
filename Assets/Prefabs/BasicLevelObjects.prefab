@@ -91,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5563930742578959812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -51.4, y: -14.549999, z: 52.251785}
+  m_LocalPosition: {x: -13.04, y: -7.0000005, z: 52.251785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5563930742565273421}
@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5563930742737961171}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -51.4, y: -16.9, z: 66.251785}
+  m_LocalPosition: {x: -13.04, y: -9.35, z: 66.251785}
   m_LocalScale: {x: 1.0576, y: 1.0523, z: 1}
   m_Children: []
   m_Father: {fileID: 8695543352508714951}
@@ -230,21 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f94b1c05513ef48bac94d0ea59606c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onEndGame:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: EnableEndGameScreen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   jumpForce: 22
   speed: 11
   groundCheckerRadius: 0.86
@@ -252,6 +237,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   timeBetweenChangeDirection: 0.5
+  artificialJumpForce: 0
 --- !u!50 &5563930742737961174
 Rigidbody2D:
   serializedVersion: 4
@@ -392,7 +378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5563930743861981067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -51.4, y: -14.549999, z: 52.251785}
+  m_LocalPosition: {x: -13.04, y: -7.0000005, z: 52.251785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8695543352508714951}

@@ -4247,38 +4247,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5563930742578959814, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563930742578959814, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.0000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563930742737961172, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
-      propertyPath: onEndGame.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1856013335}
-    - target: {fileID: 5563930742737961173, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563930742737961173, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.35
-      objectReference: {fileID: 0}
     - target: {fileID: 5563930743710201551, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1856013335}
-    - target: {fileID: 5563930743861981068, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563930743861981068, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.0000005
-      objectReference: {fileID: 0}
     - target: {fileID: 7890362915189830391, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
       propertyPath: m_Name
       value: BasicLevelObjects
