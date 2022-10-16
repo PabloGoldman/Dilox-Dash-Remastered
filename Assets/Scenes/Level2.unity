@@ -2177,6 +2177,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -16.47
       objectReference: {fileID: 0}
+    - target: {fileID: 5563930743710201551, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4067635296242863114}
+    - target: {fileID: 5563930743710201551, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeToProfile
+      objectReference: {fileID: 0}
     - target: {fileID: 5563930743861981068, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
       propertyPath: m_LocalPosition.y
       value: -14.119999
