@@ -41,6 +41,11 @@ namespace Game
             gamePanel.SetActive(true);
             inPause = false;
         }
+
+        public void ReturnToProfile()
+        {
+            GameManager.instance.ChangeToProfile();
+        }
     }
 }
 
