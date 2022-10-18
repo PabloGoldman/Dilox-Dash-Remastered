@@ -50,11 +50,7 @@ public abstract class LoggerBase
 
     public static LoggerBase CreateLogger()
     {
-#if UNITY_ANDROID
         return new AndroidLogger();
-#else
-        return new defaultLogger();
-#endif
     }
 }
 
