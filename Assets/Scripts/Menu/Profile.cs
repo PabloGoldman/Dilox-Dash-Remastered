@@ -36,8 +36,6 @@ public class Profile : MonoBehaviour
     [SerializeField] Color activeAvatarColor;
     [SerializeField] Color defaultAvatarColor;
 
-    [SerializeField] Image currentAvatar;
-
     GameObject g;
 
     int newSelectedIndex, previousSelectedIndex;
@@ -46,8 +44,6 @@ public class Profile : MonoBehaviour
     void Start()
     {
         GetAvailableAvatars();
-
-        currentAvatar.sprite = GameManager.instance.GetPlayerAvatar();
 
         newSelectedIndex = previousSelectedIndex = 0;
 
@@ -99,29 +95,5 @@ public class Profile : MonoBehaviour
         newSelectedIndex = avatarIndex;
         avatarsScrollView.GetChild(previousSelectedIndex).GetComponent<Image>().color = defaultAvatarColor;
         avatarsScrollView.GetChild(newSelectedIndex).GetComponent<Image>().color = activeAvatarColor;
-
-        currentAvatar.sprite = avatarsList[newSelectedIndex].image;
-
-        GameManager.instance.SetPlayerAvatar(currentAvatar.sprite);
     }
-
-    //public object SaveState()
-    //{
-    //    return new SaveData()
-    //    {
-    //        avatarsList = this.avatarsList
-    //    };
-    //}
-
-    //public void LoadState(object state)
-    //{
-    //    var saveData = (SaveData)state;
-    //    avatarsList = saveData.avatarsList;
-    //}
-
-    //[Serializable]
-    //public struct SaveData
-    //{
-    //    public List<Avatar> avatarsList;
-    //}
 }
