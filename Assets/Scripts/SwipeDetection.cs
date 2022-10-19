@@ -26,13 +26,13 @@ public class SwipeDetection : MonoBehaviour
             if (Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
             {
                 fingerDown = false;
-                levelSelector.LeftClick();
+                levelSelector.RightClick();
                 Debug.Log("swipe left");
             }
             else if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect)
             {
                 fingerDown = false;
-                levelSelector.RightClick();
+                levelSelector.LeftClick();
                 Debug.Log("swipe right");
             }
             else if (Input.touches[0].position.y >= startPos.y + pixelDistToDetect)
