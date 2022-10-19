@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     public void ChangeToProfile()
     {
-        GameManager.instance.ChangeToProfile();
+        GameManager.instance.ChangeToMenu();
     }
 
     public void DisableGameCoin(int coinIndex)

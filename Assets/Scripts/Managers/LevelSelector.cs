@@ -50,4 +50,9 @@ public class LevelSelector : MonoBehaviour
 
         myCinemachine.m_Follow = levels[currentIndex];
     }
+
+    public void ReturnToMenu()
+    {
+        GameManager.instance.ChangeToMenu();
+    }
 }

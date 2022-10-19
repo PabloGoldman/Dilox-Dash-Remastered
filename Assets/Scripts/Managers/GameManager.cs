@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour, ISaveable
         SceneManager.LoadScene(1);
     }
 
-    public void ChangeToProfile()
+    public void ChangeToMenu()
     {
         onSceneChanged?.Invoke();
         SceneManager.LoadScene(0);

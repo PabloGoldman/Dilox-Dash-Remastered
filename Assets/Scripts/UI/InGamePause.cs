@@ -45,7 +45,7 @@ namespace Game
         public void ReturnToProfile()
         {
             Resume();
-            GameManager.instance.ChangeToProfile();
+            GameManager.instance.ChangeToMenu();
         }
     }
 }
