@@ -3527,6 +3527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965814009}
   - component: {fileID: 1965814008}
+  - component: {fileID: 1965814010}
   m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
@@ -3574,8 +3575,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: c7292689726eb944cac8d97d668aa535, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e4d3ac6d3aac68545aa5db353550897a, type: 3}
+  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3593,12 +3594,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965814007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.963959, y: 4.927841, z: 444.46887}
-  m_LocalScale: {x: 3.934185, y: 2.1382983, z: 1}
+  m_LocalPosition: {x: 13.1388, y: 1.7129, z: 444.46887}
+  m_LocalScale: {x: 5.234481, y: 5.692499, z: 1.5738503}
   m_Children: []
   m_Father: {fileID: 1877576182}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1965814010
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965814007}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 26.4, y: 13.2}
+    newSize: {x: 40, y: 50.01221}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.4942017, y: 3.2196593}
+      - {x: -9.862963, y: 3.179049}
+      - {x: -9.964331, y: -3.4896326}
+      - {x: 2.3309777, y: -3.5611296}
+      - {x: 7.76284, y: -3.5692325}
+      - {x: 7.8062077, y: 3.1863537}
 --- !u!1001 &1990826234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4251,6 +4283,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1856013335}
+    - target: {fileID: 5563930743756266171, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 1965814010}
     - target: {fileID: 7890362915189830391, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
       propertyPath: m_Name
       value: BasicLevelObjects
