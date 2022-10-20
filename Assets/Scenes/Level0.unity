@@ -3332,6 +3332,7 @@ MonoBehaviour:
   - {fileID: 701668605}
   isCoinAvailable: 010101
   endGamePanel: {fileID: 1945604091}
+  pauseButton: {fileID: 5563930743756266170}
 --- !u!1001 &1856535365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4279,6 +4280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5563930743001847106, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5563930743710201551, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4337,6 +4342,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+--- !u!1 &5563930743756266170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8219964412429766397, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+  m_PrefabInstance: {fileID: 5563930743756266169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9113059529377510842
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour, ISaveable
     public bool[] isCoinAvailable;
 
     [SerializeField] GameObject endGamePanel;
+    [SerializeField] GameObject pauseButton;
+
 
     Player player;
 
@@ -53,6 +55,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     public void EnableEndGameScreen()
     {
         endGamePanel.SetActive(true);
+        pauseButton.SetActive(false);
     }
 
     public object SaveState()

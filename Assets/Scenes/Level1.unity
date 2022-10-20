@@ -1415,7 +1415,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1553395810}
     m_Modifications:
     - target: {fileID: 2490428556227581059, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
       propertyPath: levelToUnlock
@@ -1423,7 +1423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4036030031153429552, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4036030031153429552, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
       propertyPath: m_LocalScale.x
@@ -1431,15 +1431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4036030031153429552, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.209
+      value: 40.71644
       objectReference: {fileID: 0}
     - target: {fileID: 4036030031153429552, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.097908
+      value: 40.370552
       objectReference: {fileID: 0}
     - target: {fileID: 4036030031153429552, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 67.03327
       objectReference: {fileID: 0}
     - target: {fileID: 4036030031153429552, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1475,6 +1475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
+--- !u!4 &423107086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4036030031153429552, guid: c56e688ac7c0b8e408506db48b36a13c, type: 3}
+  m_PrefabInstance: {fileID: 423107085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &423548415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7550374917618314166, guid: 4c4b15f6845151744a9b830be2d854e8, type: 3}
@@ -3929,7 +3934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449771661882356838, guid: df48741de0bc9ee4e97b4cb528e95348, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5449771661882356838, guid: df48741de0bc9ee4e97b4cb528e95348, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4499,7 +4504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449771661882356838, guid: df48741de0bc9ee4e97b4cb528e95348, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5449771661882356838, guid: df48741de0bc9ee4e97b4cb528e95348, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5231,6 +5236,7 @@ Transform:
   - {fileID: 1342443425}
   - {fileID: 453049031}
   - {fileID: 163977703}
+  - {fileID: 423107086}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5252,6 +5258,7 @@ MonoBehaviour:
   - {fileID: 0}
   isCoinAvailable: 010101
   endGamePanel: {fileID: 1236073214}
+  pauseButton: {fileID: 2070134212}
 --- !u!1001 &1587591294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6507,7 +6514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449771661882356838, guid: df48741de0bc9ee4e97b4cb528e95348, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5449771661882356838, guid: df48741de0bc9ee4e97b4cb528e95348, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6652,6 +6659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+--- !u!1 &2070134212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8219964412429766397, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+  m_PrefabInstance: {fileID: 2070134211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2103251656
 PrefabInstance:
   m_ObjectHideFlags: 0
