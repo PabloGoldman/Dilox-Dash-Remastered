@@ -95,5 +95,7 @@ public class Profile : MonoBehaviour
         newSelectedIndex = avatarIndex;
         avatarsScrollView.GetChild(previousSelectedIndex).GetComponent<Image>().color = defaultAvatarColor;
         avatarsScrollView.GetChild(newSelectedIndex).GetComponent<Image>().color = activeAvatarColor;
+
+        GameManager.instance.SetPlayerAvatar(avatarsList[avatarIndex].image);
     }
 }
