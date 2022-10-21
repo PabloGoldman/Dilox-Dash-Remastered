@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 42041750}
   - component: {fileID: 42041749}
   m_Layer: 0
-  m_Name: audioPersonaje4
+  m_Name: Level2Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,6 +711,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220820121731717727, guid: 438a5b28edb0f484d8f12096b1fa6cac, type: 3}
   m_PrefabInstance: {fileID: 369866904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &377362623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8219964412429766397, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+  m_PrefabInstance: {fileID: 1735861304}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &378477723 stripped
 GameObject:
@@ -1880,7 +1885,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 207.59096, y: 138.64552}
+  m_Size: {x: 259.99014, y: 149.36577}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1922,19 +1927,18 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 43.2, y: 21.6}
-    newSize: {x: 207.59096, y: 138.64552}
+    newSize: {x: 259.99014, y: 149.36577}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.5949135, y: 52.74048}
-      - {x: -70.518166, y: 50.614674}
-      - {x: -71.33431, y: -56.001667}
-      - {x: 10.120556, y: -54.935863}
-      - {x: 75.89271, y: -56.62645}
-      - {x: 76.11342, y: 49.670204}
+    - - {x: -100.853424, y: 53.112873}
+      - {x: -99.88515, y: -58.614216}
+      - {x: -2.5121741, y: -61.685883}
+      - {x: 89.87311, y: -64.14734}
+      - {x: 90.330864, y: 48.56237}
 --- !u!4 &1307794539
 Transform:
   m_ObjectHideFlags: 0
@@ -1943,7 +1947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307794533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.9447, y: 86.3, z: 34.799618}
+  m_LocalPosition: {x: -13.4059, y: 89.1642, z: 34.799618}
   m_LocalScale: {x: 0.53435934, y: 0.53435934, z: 0.53435934}
   m_Children: []
   m_Father: {fileID: 4067635296242863113}
@@ -2370,6 +2374,14 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1307794534}
+    - target: {fileID: 5563930743861981068, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3900003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563930743861981068, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7890362915189830391, guid: 98076d59c367d5a41a4f384586273a94, type: 3}
       propertyPath: m_Name
       value: BasicLevelObjects
@@ -2520,11 +2532,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1458136306958847349, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Size.x
-      value: 140.00629
+      value: 930.94
       objectReference: {fileID: 0}
     - target: {fileID: -1458136306958847349, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Offset.x
-      value: -0.07302475
+      value: 0.26992798
       objectReference: {fileID: 0}
     - target: {fileID: -1458136306958847349, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
@@ -2532,7 +2544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1458136306958847349, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 140.39664
+      value: 930.6403
       objectReference: {fileID: 0}
     - target: {fileID: 1073659199123783784, guid: eea8376bdb0e748499034ec267fb4ff7, type: 3}
       propertyPath: m_Name
@@ -5627,7 +5639,7 @@ MonoBehaviour:
   - {fileID: 826513302}
   isCoinAvailable: 010101
   endGamePanel: {fileID: 896449071}
-  pauseButton: {fileID: 0}
+  pauseButton: {fileID: 377362623}
 --- !u!114 &4067635296242863115
 MonoBehaviour:
   m_ObjectHideFlags: 0

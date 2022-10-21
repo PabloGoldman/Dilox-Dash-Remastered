@@ -10,7 +10,6 @@ public class LevelManager : MonoBehaviour, ISaveable
     [SerializeField] GameObject endGamePanel;
     [SerializeField] GameObject pauseButton;
 
-
     Player player;
 
     private void Awake()

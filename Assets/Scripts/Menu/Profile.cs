@@ -36,18 +36,21 @@ public class Profile : MonoBehaviour
     [SerializeField] Color activeAvatarColor;
     [SerializeField] Color defaultAvatarColor;
 
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip selectAvatarAudioClip;
+
     GameObject g;
 
     int newSelectedIndex, previousSelectedIndex;
-        
+
+    bool firstLoad = true;
+
     // Start is called before the first frame update
     void Start()
     {
         GetAvailableAvatars();
 
         newSelectedIndex = previousSelectedIndex = 0;
-
-        //Invoke(nameof(GetAvailableAvatars), 2);
     }
 
     private void GetAvailableAvatars()
@@ -61,6 +64,7 @@ public class Profile : MonoBehaviour
         }
 
         SelectAvatar(newSelectedIndex);  //Hay que tocar algo aca para no reiniciar el avatar cada vez q arranca la partida
+        firstLoad = false;
     }
 
     public void ChangeToLevelSelection()
@@ -91,6 +95,10 @@ public class Profile : MonoBehaviour
 
     void SelectAvatar(int avatarIndex)
     {
+        if (!firstLoad)
+        {
+            source.PlayOneShot(selectAvatarAudioClip);
+        }
         previousSelectedIndex = newSelectedIndex;
         newSelectedIndex = avatarIndex;
         avatarsScrollView.GetChild(previousSelectedIndex).GetComponent<Image>().color = defaultAvatarColor;
