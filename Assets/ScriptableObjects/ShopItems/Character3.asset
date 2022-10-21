@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45128c06a6473524b87d9ac72dfe3c09, type: 3}
   m_Name: Character3
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 2f49e6a1349d11e4bb7c760c77279432, type: 3}
+  image: {fileID: 6922136421186925467, guid: 2f49e6a1349d11e4bb7c760c77279432, type: 3}
   price: 2
-  isPurchased: 0
+  isPurchased: 1
