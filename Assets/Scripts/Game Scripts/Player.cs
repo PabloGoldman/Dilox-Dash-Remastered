@@ -81,16 +81,11 @@ public class Player : MonoBehaviour
         rb.velocity = currentVelocity;
     }
 
-    public bool ManualJump()
-    {
-        return false;
-    }
-
     bool IsChangingDirection()
     {
         foreach (Touch t in Input.touches)
         {
-            if (t.position.x < Screen.width / 2 /*&& contador <= 0f*/ && speed != 0f /*&& PauseMenu.GameIsPaused == false*/)
+            if (t.position.x < Screen.width / 2 && speed != 0f && Time.timeScale > 0)
             {
                 return true;
             }
