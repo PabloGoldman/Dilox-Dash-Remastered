@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float speed;
 
+    AudioSource source;
+    [SerializeField] AudioClip deathSound;
+
     [SerializeField] float groundCheckerRadius;
     [SerializeField] LayerMask groundLayers;
 
@@ -34,6 +37,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        source = GetComponent<AudioSource>();
 
         spawnPosition = transform.position;
     }
@@ -164,6 +169,7 @@ public class Player : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
+        source.PlayOneShot(deathSound);
         deadParticles.Play();
 
         runParticles.gameObject.SetActive(false);
