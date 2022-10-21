@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] float timeBetweenChangeDirection;
 
     [SerializeField] ParticleSystem deadParticles;
+    [SerializeField] ParticleSystem runParticles;
 
     Color transparentColor;
 
@@ -48,17 +49,21 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!justSpawned && !inEndLevel)
+        if (!inEndLevel)
         {
-            Movement();
-            GroundCheck();
-            ManageCounters();
-        }
-        else if (!inEndLevel)
-        {
-            if (IsJumping())
+            if (!justSpawned)
             {
-                justSpawned = false;
+                Movement();
+                GroundCheck();
+                ManageCounters();
+            }
+            else
+            {
+                if (IsJumping())
+                {
+                    justSpawned = false;
+                    runParticles.gameObject.SetActive(true);
+                }
             }
         }
     }
@@ -139,20 +144,32 @@ public class Player : MonoBehaviour
     void Respawn()
     {
         rb.constraints = RigidbodyConstraints2D.None;
+
         transform.position = spawnPosition;
+
         justSpawned = true;
+
         rb.velocity = Vector3.zero;
+
         direction = 1;
+
         hasInversedGravity = false;
+
         inEndLevel = false;
+
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void Die()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
         deadParticles.Play();
+
+        runParticles.gameObject.SetActive(false);
+
         GetComponent<SpriteRenderer>().color = Color.clear;
+
         Invoke(nameof(Respawn), 1f);
     }
 
@@ -171,7 +188,6 @@ public class Player : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(offset, groundCheckerRadius, groundLayers);
         }
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
