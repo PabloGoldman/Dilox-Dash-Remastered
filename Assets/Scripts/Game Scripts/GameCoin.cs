@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class GameCoin : MonoBehaviour
 {
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip coinSound;
+
     LevelManager levelManager;
 
     public bool isAvailable;
@@ -36,6 +39,8 @@ public class GameCoin : MonoBehaviour
         {
             if (isAvailable)
             {
+                source.PlayOneShot(coinSound);
+
                 GameManager.instance.AddCoins();
 
                 levelManager.DisableGameCoin(coinIndex);
