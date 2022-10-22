@@ -55,7 +55,7 @@ public class SaveLoadSystem : MonoBehaviour
     [ContextMenu("Save")]
     public void Save()
     {
-        Debug.Log("saved");
+       // Debug.Log("saved");
         var state = LoadFile();
         SaveState(state);
         SaveFile(state);

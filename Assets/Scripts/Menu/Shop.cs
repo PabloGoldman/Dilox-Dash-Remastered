@@ -12,6 +12,10 @@ public class Shop : MonoBehaviour, ISaveable
 
     public Action onBuy;
 
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip BuySound;
+    [SerializeField] AudioClip ErrorSound;
+
     private void Awake()
     {
         SaveLoadSystem.instance.Load();
@@ -72,6 +76,7 @@ public class Shop : MonoBehaviour, ISaveable
     {
         if (GameManager.instance.HasEnoughCoins(shopItemsList[itemIndex].price))
         {
+            source.PlayOneShot(BuySound);
             GameManager.instance.UseCoins(shopItemsList[itemIndex].price);
 
             isPurchased[itemIndex] = true;
@@ -87,6 +92,7 @@ public class Shop : MonoBehaviour, ISaveable
         }
         else
         {
+            source.PlayOneShot(ErrorSound);
             noCoinsAnim.SetTrigger("NoCoins");
         }
 
