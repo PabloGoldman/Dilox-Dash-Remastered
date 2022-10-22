@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813527865106689311, guid: 492fb9e4dfb152247b25322791555358, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000028494916
+      value: 0.0006736665
       objectReference: {fileID: 0}
     - target: {fileID: 4813527865222638143, guid: 492fb9e4dfb152247b25322791555358, type: 3}
       propertyPath: m_IsActive
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 6631f1c0fdc838f4481545f1c1cc17ae, type: 3}
     - target: {fileID: 4813527866087405799, guid: 492fb9e4dfb152247b25322791555358, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.50445557
+      value: -0.50442505
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492fb9e4dfb152247b25322791555358, type: 3}
@@ -1080,6 +1080,10 @@ PrefabInstance:
     - target: {fileID: 5069448022166541953, guid: a6cd15db7094acd44b3fc21a025a2815, type: 3}
       propertyPath: m_Name
       value: AdsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069448022166541953, guid: a6cd15db7094acd44b3fc21a025a2815, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5069448022166541954, guid: a6cd15db7094acd44b3fc21a025a2815, type: 3}
       propertyPath: m_RootOrder
