@@ -24,8 +24,11 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public Action onSceneChanged;
     public Action onLevelUnlocked;
+    public Action onReturnToMainMenu;
 
     [SerializeField] PlayerData playerData;
+
+    public bool inGameplay;
 
     public int playerCoins;
 
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         if (!levelsLocked[level])
         {
+            inGameplay = true;
             SceneManager.LoadScene("Level" + level);
             onSceneChanged?.Invoke();
         }
@@ -68,8 +72,11 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void ChangeToMenu()
     {
+        inGameplay = false;
         onSceneChanged?.Invoke();
         SceneManager.LoadScene(0);
+
+        onReturnToMainMenu?.Invoke();
     }
 
     public void UnlockLevel(int index)

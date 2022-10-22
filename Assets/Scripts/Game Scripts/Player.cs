@@ -176,6 +176,8 @@ public class Player : MonoBehaviour
 
         GetComponent<SpriteRenderer>().color = Color.clear;
 
+        AdsManager.instance.ShowDeathAd();
+
         Invoke(nameof(Respawn), 1f);
     }
 
@@ -193,6 +195,14 @@ public class Player : MonoBehaviour
 
             isGrounded = Physics2D.OverlapCircle(offset, groundCheckerRadius, groundLayers);
         }
+    }
+
+    void WinLevel()
+    {
+        Debug.Log("End level");
+        inEndLevel = true;
+        onEndGame?.Invoke();
+        AdsManager.instance.ShowAdWithDelay();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -213,9 +223,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EndLevel"))
         {
-            Debug.Log("End level");
-            inEndLevel = true;
-            onEndGame?.Invoke();
+            WinLevel();
 
             GameManager.instance.UnlockLevel(collision.GetComponent<EndLevelCollider>().levelToUnlock);
         }
