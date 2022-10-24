@@ -202,7 +202,7 @@ public class Player : MonoBehaviour
         Debug.Log("End level");
         inEndLevel = true;
         onEndGame?.Invoke();
-        AdsManager.instance.ShowAdWithDelay();
+        //AdsManager.instance.ShowAdWithDelay();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

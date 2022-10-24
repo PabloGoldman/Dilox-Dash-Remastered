@@ -29,8 +29,6 @@ public class AdsManager : MonoBehaviour
     [SerializeField] float timePerAd;
     float adCounter;
 
-    public float delayAfterReachingEndLevel;
-
     void Start()
     {
         adCounter = timePerAd;
@@ -57,12 +55,7 @@ public class AdsManager : MonoBehaviour
         }
     }
 
-    public void ShowAdWithDelay()
-    {
-        Invoke(nameof(ShowInterstitial), delayAfterReachingEndLevel);
-    }
-
-    void ShowInterstitial()
+    public void ShowInterstitial()
     {
         interstitialAd.ShowInterstitial();
     }

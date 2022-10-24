@@ -41,7 +41,6 @@ public class SaveLoadSystem : MonoBehaviour
         }
     }
 
-    //Tengo que guardar cuando salgo de la aplicacion, y cuando cambio de escena
     private void OnApplicationQuit()
     {
         if (AbleToSave)
@@ -55,7 +54,6 @@ public class SaveLoadSystem : MonoBehaviour
     [ContextMenu("Save")]
     public void Save()
     {
-       // Debug.Log("saved");
         var state = LoadFile();
         SaveState(state);
         SaveFile(state);
