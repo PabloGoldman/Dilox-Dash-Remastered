@@ -56,7 +56,8 @@ public abstract class LoggerBase
 
 public class AndroidLogger : LoggerBase
 {
-    const string LOGGER_CLASS_NAME = "com.example.logger2022.GameLogger";
+    //const string LOGGER_CLASS_NAME = "com.example.logger2022.GameLogger";
+    const string LOGGER_CLASS_NAME = "Logger2022-release";
     const char SEP = ';';
     AndroidJavaClass loggerClass;
     AndroidJavaObject loggerObject;
@@ -88,7 +89,7 @@ public class AndroidLogger : LoggerBase
 
     public override void ShowAlert(Action<bool> callback)
     {
-        // Llama al plugn para mostrar la alerta
+        // Llama al plugin para mostrar la alerta
         loggerObject.Call("ShowAlert");
         callback.Invoke(true);
     }
