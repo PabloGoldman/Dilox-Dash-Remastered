@@ -1,14 +1,18 @@
 using System;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PluginTest : MonoBehaviour
 {
-    LoggerBase logger;
+    [SerializeField] private TMP_Text contentText = null;
+
+    private LoggerBase logger = null;
 
     private void Start()
     {
         logger = LoggerBase.CreateLogger();
+        logger.logs = contentText;
         UpdateLogs();
     }
 
@@ -22,76 +26,101 @@ public class PluginTest : MonoBehaviour
     public void ClearLog()
     {
         // Llamar a la alerta con el callback de ConfirmDeleteAll()
-        logger.ShowAlert(ConfirmDeleteAll);
+        ConfirmDeleteAll();
     }
     #endregion
 
-    private void ConfirmDeleteAll(bool confirm)
+    private void ConfirmDeleteAll()
     {
-        if (!confirm) return;
-
         logger.DeleteAll();
         UpdateLogs();
     }
 
     private void UpdateLogs()
     {
-        var logs = logger.GetAllLogs();
         // Updatear logs en la pantalla
+        logger.GetAllLogs();
+        LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)contentText.transform.parent);
     }
 }
 
 public abstract class LoggerBase
 {
-    public abstract void Log(string str);
+    public TMP_Text logs = null;
+    public abstract void Log(string message);
     public abstract void DeleteAll();
-    public abstract List<string> GetAllLogs();
-    public abstract void ShowAlert(System.Action<bool> callback);
+    public abstract void GetAllLogs();
+    public abstract void ShowAlertView(string title, string message, Action positive = null, Action negative = null);
 
     public static LoggerBase CreateLogger()
     {
-        return new AndroidLogger();
+#if UNITY_ANDROID
+        return new AndroidLogger($"{Application.persistentDataPath}/Logs.txt");
+#else
+        return new DefaultLogger();
+#endif
     }
 }
 
 public class AndroidLogger : LoggerBase
 {
-    //const string LOGGER_CLASS_NAME = "com.example.logger2022.GameLogger";
-    const string LOGGER_CLASS_NAME = "Logger2022-release";
-    const char SEP = ';';
+    const string pluginName = "com.example.logger2022.GameLogger";
+    const string interfaceName = "com.example.logger2022.AlertCallback";
     AndroidJavaClass loggerClass;
     AndroidJavaObject loggerObject;
+    string filepath = "";
 
-    public AndroidLogger()
+    public class AlertCallback : AndroidJavaProxy
     {
-        loggerClass = new AndroidJavaClass(LOGGER_CLASS_NAME);
-        loggerObject = loggerClass.CallStatic<AndroidJavaObject>("GetInstance");
+        public Action acceptAction;
+        public Action declineAction;
+
+        public AlertCallback() : base(interfaceName) { }
+        public void OnAccept() => acceptAction?.Invoke();
+        public void OnDecline() => declineAction?.Invoke();
     }
 
-    public override void Log(string str)
+    public AndroidLogger(string filepath)
     {
-        loggerObject.Call("MyLog", str);
+        this.filepath = filepath;
+
+        AndroidJavaClass playerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject activity = playerClass.GetStatic<AndroidJavaObject>("currentActivity");
+
+        loggerClass = new AndroidJavaClass(pluginName);
+        loggerObject = loggerClass.CallStatic<AndroidJavaObject>("GetInstance", filepath);
+        loggerObject.CallStatic("ReceiveUnityActivity", activity);
+
+        Debug.Log($"Activity: {activity}");
+    }
+
+    public override void Log(string message)
+    {
+        loggerObject.Call("SendLog", $"{message}\n");
+        loggerObject.Call("SaveLog");
     }
 
     public override void DeleteAll()
     {
-        loggerObject.Call("DeleteAll");
+        ShowAlertView("Delete all logs", "Confirm", () =>
+        {
+            loggerObject.Call("DeleteAll");
+            logs.text = "";
+        });
     }
 
-    public override List<string> GetAllLogs()
+    public override void GetAllLogs()
     {
-        List<string> allLogs = new List<string>();
-        string text = loggerObject.Call<string>("GetAllLogs");
-        var logsArray = text.Split(SEP);
-        allLogs.AddRange(logsArray);
-        return allLogs;
+        logs.text = loggerObject.Call<string>("GetAllLogs");
     }
 
-    public override void ShowAlert(Action<bool> callback)
+    public override void ShowAlertView(string title, string message, Action positive = null, Action negative = null)
     {
-        // Llama al plugin para mostrar la alerta
-        loggerObject.Call("ShowAlert");
-        callback.Invoke(true);
+        AlertCallback alertCallback = new AlertCallback();
+        alertCallback.acceptAction = positive;
+        alertCallback.declineAction = negative;
+
+        loggerObject.Call("ShowAlert", new object[] { title, message, alertCallback });
     }
 }
 
@@ -107,14 +136,13 @@ public class DefaultLogger : LoggerBase
         Debug.Log("DeleteAll");
     }
 
-    public override List<string> GetAllLogs()
+    public override void GetAllLogs()
     {
         Debug.Log("GetAllLogs");
-        return new List<string>();
     }
 
-    public override void ShowAlert(Action<bool> callback)
+    public override void ShowAlertView(string title, string message, Action positive = null, Action negative = null)
     {
-        throw new NotImplementedException();
+        Debug.Log("ShowAlertView");
     }
 }
