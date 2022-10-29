@@ -25,7 +25,6 @@ public class PluginTest : MonoBehaviour
 
     public void ClearLog()
     {
-        // Llamar a la alerta con el callback de ConfirmDeleteAll()
         ConfirmDeleteAll();
     }
     #endregion
