@@ -48,11 +48,12 @@ public abstract class Logger
 
     public static Logger CreateLogger(TextMeshProUGUI text)
     {
-#if UNITY_ANDROID
-        return new AndroidLogger(path, text);
-#else
         return new DefaultLogger(path, text);
-#endif
+//#if UNITY_ANDROID
+//        return new AndroidLogger(path, text);
+//#else
+//        return new DefaultLogger(path, text);
+//#endif
     }
 }
 
@@ -108,24 +109,6 @@ public class AndroidLogger : Logger
     }
 }
 
-public class Alert : AndroidJavaProxy
-{
-    public Action positiveAction;
-    public Action negativeAction;
-    const string alertInterfaceName = "com.example.Logger.Alert";
-
-    public Alert() : base(alertInterfaceName) { }
-
-    public void OnPositive()
-    {
-        positiveAction?.Invoke();
-    }
-
-    public void OnNegative()
-    {
-        negativeAction?.Invoke();
-    }
-}
 
 public class DefaultLogger : Logger
 {
@@ -167,5 +150,24 @@ public class DefaultLogger : Logger
     public override void WriteLog()
     {
         File.WriteAllText(path, logs);
+    }
+}
+
+public class Alert : AndroidJavaProxy
+{
+    public Action positiveAction;
+    public Action negativeAction;
+    const string alertInterfaceName = "com.example.Logger.Alert";
+
+    public Alert() : base(alertInterfaceName) { }
+
+    public void OnPositive()
+    {
+        positiveAction?.Invoke();
+    }
+
+    public void OnNegative()
+    {
+        negativeAction?.Invoke();
     }
 }
