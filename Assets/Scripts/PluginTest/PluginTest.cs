@@ -2,12 +2,11 @@ using System;
 using System.IO;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PluginTest : MonoBehaviour
 {
-    [SerializeField] private TMPro.TextMeshProUGUI text;
-    [SerializeField] private TMPro.TMP_InputField LogInput;
+    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TMP_InputField LogInput;
     private Logger logger;
 
     private void Awake()
@@ -37,7 +36,7 @@ public class PluginTest : MonoBehaviour
 public abstract class Logger
 {
     private static string path = Application.persistentDataPath + "/Logs.txt";
-    protected TMPro.TextMeshProUGUI text;
+    protected TextMeshProUGUI text;
 
     public abstract void AddLog(string log);
 
@@ -47,7 +46,7 @@ public abstract class Logger
 
     public abstract void Clear();
 
-    public static Logger CreateLogger(TMPro.TextMeshProUGUI text)
+    public static Logger CreateLogger(TextMeshProUGUI text)
     {
 #if UNITY_ANDROID
         return new AndroidLogger(path, text);
@@ -65,7 +64,7 @@ public class AndroidLogger : Logger
     AndroidJavaClass androidLoggerClass;
     AndroidJavaObject androidLoggerObject;
 
-    public AndroidLogger(string path, TMPro.TextMeshProUGUI text)
+    public AndroidLogger(string path, TextMeshProUGUI text)
     {
         this.text = text;
         this.path = path;
@@ -134,7 +133,7 @@ public class DefaultLogger : Logger
 
     private string logs;
 
-    public DefaultLogger(string path, TMPro.TextMeshProUGUI text)
+    public DefaultLogger(string path, TextMeshProUGUI text)
     {
         this.text = text;
         this.path = path;
