@@ -20,7 +20,7 @@ public class PluginTest : MonoBehaviour
         logger.ShowAllLogs();
     }
 
-    public void SendLogsButtonPressed()
+    public void SendLog()
     {
         logger.AddLog(LogInput.text);
         logger.WriteLog();
@@ -28,7 +28,7 @@ public class PluginTest : MonoBehaviour
         logger.ShowAllLogs();
     }
 
-    public void ClearLogsButtonPressed()
+    public void ClearLog()
     {
         logger.Clear();
     }
@@ -52,14 +52,14 @@ public abstract class Logger
 #if UNITY_ANDROID
         return new AndroidLogger(path, text);
 #else
-            return new BasicLogger(path, text);
+        return new DefaultLogger(path, text);
 #endif
     }
 }
 
 public class AndroidLogger : Logger
 {
-    const string pluginName = "com.example.Plugintest";
+    const string pluginName = "com.example.PluginTest";
     string path;
 
     AndroidJavaClass androidLoggerClass;
@@ -90,7 +90,7 @@ public class AndroidLogger : Logger
 
     public override void Clear()
     {
-        ShowAlert("All records will be deleted.", "Do you want to continue?", () => { androidLoggerObject.Call("ClearLogs"); text.text = ""; });
+        ShowAlert("Deleting all records.", "Do you want to continue?", () => { androidLoggerObject.Call("ClearLogs"); text.text = ""; });
     }
 
     public override void AddLog(string log)
@@ -113,7 +113,7 @@ public class Alert : AndroidJavaProxy
 {
     public Action positiveAction;
     public Action negativeAction;
-    const string alertInterfaceName = "com.example.loggermanager.Alert";
+    const string alertInterfaceName = "com.example.Logger.Alert";
 
     public Alert() : base(alertInterfaceName) { }
 
