@@ -1,147 +1,172 @@
 using System;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PluginTest : MonoBehaviour
 {
-    [SerializeField] private TMP_Text contentText = null;
+    [SerializeField] private TMPro.TextMeshProUGUI text;
+    [SerializeField] private TMPro.TMP_InputField LogInput;
+    private Logger logger;
 
-    private LoggerBase logger = null;
+    private void Awake()
+    {
+        logger = Logger.CreateLogger(text);
+    }
 
     private void Start()
     {
-        logger = LoggerBase.CreateLogger();
-        logger.logs = contentText;
-        UpdateLogs();
+        logger.ShowAllLogs();
     }
 
-    #region UI_Events
-    public void SendLog()
+    public void SendLogsButtonPressed()
     {
-        logger.Log("Time: " + Time.time);
-        UpdateLogs();
+        logger.AddLog(LogInput.text);
+        logger.WriteLog();
+        LogInput.text = "";
+        logger.ShowAllLogs();
     }
 
-    public void ClearLog()
+    public void ClearLogsButtonPressed()
     {
-        ConfirmDeleteAll();
-    }
-    #endregion
-
-    private void ConfirmDeleteAll()
-    {
-        logger.DeleteAll();
-        UpdateLogs();
-    }
-
-    private void UpdateLogs()
-    {
-        // Updatear logs en la pantalla
-        logger.GetAllLogs();
-        LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)contentText.transform.parent);
+        logger.Clear();
     }
 }
 
-public abstract class LoggerBase
+public abstract class Logger
 {
-    public TMP_Text logs = null;
-    public abstract void Log(string message);
-    public abstract void DeleteAll();
-    public abstract void GetAllLogs();
-    public abstract void ShowAlertView(string title, string message, Action positive = null, Action negative = null);
+    private static string path = Application.persistentDataPath + "/Logs.txt";
+    protected TMPro.TextMeshProUGUI text;
 
-    public static LoggerBase CreateLogger()
+    public abstract void AddLog(string log);
+
+    public abstract void ShowAllLogs();
+
+    public abstract void WriteLog();
+
+    public abstract void Clear();
+
+    public static Logger CreateLogger(TMPro.TextMeshProUGUI text)
     {
 #if UNITY_ANDROID
-        return new AndroidLogger($"{Application.persistentDataPath}/Logs.txt");
+        return new AndroidLogger(path, text);
 #else
-        return new DefaultLogger();
+            return new BasicLogger(path, text);
 #endif
     }
 }
 
-public class AndroidLogger : LoggerBase
+public class AndroidLogger : Logger
 {
-    const string pluginName = "com.example.logger2022.GameLogger";
-    const string interfaceName = "com.example.logger2022.AlertCallback";
-    AndroidJavaClass loggerClass;
-    AndroidJavaObject loggerObject;
-    string filepath = "";
+    const string pluginName = "com.example.Plugintest";
+    string path;
 
-    public class AlertCallback : AndroidJavaProxy
+    AndroidJavaClass androidLoggerClass;
+    AndroidJavaObject androidLoggerObject;
+
+    public AndroidLogger(string path, TMPro.TextMeshProUGUI text)
     {
-        public Action acceptAction;
-        public Action declineAction;
+        this.text = text;
+        this.path = path;
 
-        public AlertCallback() : base(interfaceName) { }
-        public void OnAccept() => acceptAction?.Invoke();
-        public void OnDecline() => declineAction?.Invoke();
+        androidLoggerClass = new AndroidJavaClass(pluginName);
+        androidLoggerObject = androidLoggerClass.CallStatic<AndroidJavaObject>("GetInstance", path);
+
+        AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
+
+        androidLoggerObject.CallStatic("SetUnityActivity", jo);
     }
 
-    public AndroidLogger(string filepath)
+    private void ShowAlert(string title, string message, Action confirm = null, Action cancel = null)
     {
-        this.filepath = filepath;
-
-        AndroidJavaClass playerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        AndroidJavaObject activity = playerClass.GetStatic<AndroidJavaObject>("currentActivity");
-
-        loggerClass = new AndroidJavaClass(pluginName);
-        loggerObject = loggerClass.CallStatic<AndroidJavaObject>("GetInstance", filepath);
-        loggerObject.CallStatic("ReceiveUnityActivity", activity);
-
-        Debug.Log($"Activity: {activity}");
+        Alert alert = new Alert();
+        alert.positiveAction = confirm;
+        alert.negativeAction = cancel;
+        androidLoggerObject.Call("CreateAlert", new object[] { title, message, alert });
+        androidLoggerObject.Call("ShowAlert");
     }
 
-    public override void Log(string message)
+    public override void Clear()
     {
-        loggerObject.Call("SendLog", $"{message}\n");
-        loggerObject.Call("SaveLog");
+        ShowAlert("All records will be deleted.", "Do you want to continue?", () => { androidLoggerObject.Call("ClearLogs"); text.text = ""; });
     }
 
-    public override void DeleteAll()
+    public override void AddLog(string log)
     {
-        ShowAlertView("Delete all logs", "Confirm", () =>
-        {
-            loggerObject.Call("DeleteAll");
-            logs.text = "";
-        });
+        androidLoggerObject.Call("AddLog", log + "\n");
     }
 
-    public override void GetAllLogs()
+    public override void ShowAllLogs()
     {
-        logs.text = loggerObject.Call<string>("GetAllLogs");
+        text.text = androidLoggerObject.Call<string>("GetLogs");
     }
 
-    public override void ShowAlertView(string title, string message, Action positive = null, Action negative = null)
+    public override void WriteLog()
     {
-        AlertCallback alertCallback = new AlertCallback();
-        alertCallback.acceptAction = positive;
-        alertCallback.declineAction = negative;
-
-        loggerObject.Call("ShowAlert", new object[] { title, message, alertCallback });
+        androidLoggerObject.Call("WriteLog");
     }
 }
 
-public class DefaultLogger : LoggerBase
+public class Alert : AndroidJavaProxy
 {
-    public override void Log(string str)
+    public Action positiveAction;
+    public Action negativeAction;
+    const string alertInterfaceName = "com.example.loggermanager.Alert";
+
+    public Alert() : base(alertInterfaceName) { }
+
+    public void OnPositive()
     {
-        Debug.Log(str);
+        positiveAction?.Invoke();
     }
 
-    public override void DeleteAll()
+    public void OnNegative()
     {
-        Debug.Log("DeleteAll");
+        negativeAction?.Invoke();
+    }
+}
+
+public class DefaultLogger : Logger
+{
+    private string path;
+
+    private string logs;
+
+    public DefaultLogger(string path, TMPro.TextMeshProUGUI text)
+    {
+        this.text = text;
+        this.path = path;
+
+        if (File.Exists(path))
+            logs = File.ReadAllText(path);
     }
 
-    public override void GetAllLogs()
+    public override void Clear()
     {
-        Debug.Log("GetAllLogs");
+        logs = "";
+
+        text.text = "";
+
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
     }
 
-    public override void ShowAlertView(string title, string message, Action positive = null, Action negative = null)
+    public override void ShowAllLogs()
     {
-        Debug.Log("ShowAlertView");
+        text.text = logs;
+    }
+
+    public override void AddLog(string log)
+    {
+        logs += log + "\n";
+    }
+
+    public override void WriteLog()
+    {
+        File.WriteAllText(path, logs);
     }
 }
