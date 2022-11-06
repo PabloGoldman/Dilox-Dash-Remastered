@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - EndLevel
   - BouncyIce
+  - Reverse Gravity
   layers:
   - Default
   - TransparentFX

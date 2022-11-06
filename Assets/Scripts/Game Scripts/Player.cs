@@ -143,7 +143,14 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        currentVelocity.y = jumpForce;
+        if (!hasInversedGravity)
+        {
+            currentVelocity.y = jumpForce;
+        }
+        else
+        {
+            currentVelocity.y = -jumpForce;
+        }
     }
 
     void Respawn()
@@ -227,12 +234,18 @@ public class Player : MonoBehaviour
 
             GameManager.instance.UnlockLevel(collision.GetComponent<EndLevelCollider>().levelToUnlock);
         }
+
+        if (collision.gameObject.CompareTag("Reverse Gravity"))
+        {
+            rb.gravityScale *= -1;
+            hasInversedGravity = true;
+        }
     }
 
     private void OnDrawGizmos()
     {
-        //Vector2 offset = new Vector2(transform.position.x, transform.position.y + 0.18f);
-        //Gizmos.DrawSphere(offset, groundCheckerRadius);
+        Vector2 offset = new Vector2(transform.position.x, transform.position.y + 0.18f);
+        Gizmos.DrawSphere(offset, groundCheckerRadius);
     }
 
 }
