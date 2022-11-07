@@ -238,14 +238,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Reverse Gravity"))
         {
             rb.gravityScale *= -1;
-            hasInversedGravity = true;
+            hasInversedGravity = !hasInversedGravity;
         }
     }
 
     private void OnDrawGizmos()
     {
-        Vector2 offset = new Vector2(transform.position.x, transform.position.y + 0.18f);
-        Gizmos.DrawSphere(offset, groundCheckerRadius);
+        //Vector2 offset = new Vector2(transform.position.x, transform.position.y + 0.18f);
+        //Gizmos.DrawSphere(offset, groundCheckerRadius);
     }
 
 }

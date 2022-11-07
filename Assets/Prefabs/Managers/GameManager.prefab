@@ -45,12 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: e7fce454282578642b9bc1ceef28ef0f, type: 2}
+  inGameplay: 0
   playerCoins: 0
-  levelToInstantiate: {fileID: 0}
-  levelsLocked: 0001
-  levels:
-  - {fileID: 11400000, guid: 4b59c72a4a22644459fbad5e041d0db9, type: 2}
-  - {fileID: 11400000, guid: 08e8e1013364a8742988f2b4ff642da9, type: 2}
+  levelsLocked: 00010101
 --- !u!114 &9057353699267062307
 MonoBehaviour:
   m_ObjectHideFlags: 0

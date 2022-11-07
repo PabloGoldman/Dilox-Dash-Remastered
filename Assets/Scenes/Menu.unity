@@ -795,10 +795,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9057353700784542933, guid: 25673de7b9167124896ac1f0a9e234c6, type: 3}
       propertyPath: levelsLocked.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9057353700784542933, guid: 25673de7b9167124896ac1f0a9e234c6, type: 3}
       propertyPath: levelsLocked.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057353700784542933, guid: 25673de7b9167124896ac1f0a9e234c6, type: 3}
+      propertyPath: levelsLocked.Array.data[4]
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
