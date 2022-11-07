@@ -27,7 +27,11 @@ public class Player : MonoBehaviour
 
     bool inEndLevel;
 
+    float initialGravityScale = 6;
+
     Vector3 spawnPosition;
+    Quaternion initialRotation;
+
     Vector2 currentVelocity;
     float direction;
     bool hasInversedGravity;
@@ -41,6 +45,7 @@ public class Player : MonoBehaviour
         source = GetComponent<AudioSource>();
 
         spawnPosition = transform.position;
+        initialRotation = transform.rotation;
     }
 
     // Start is called before the first frame update
@@ -159,9 +164,13 @@ public class Player : MonoBehaviour
 
         transform.position = spawnPosition;
 
+        transform.rotation = initialRotation;
+
         justSpawned = true;
 
         rb.velocity = Vector3.zero;
+
+        rb.gravityScale = initialGravityScale;
 
         direction = 1;
 
