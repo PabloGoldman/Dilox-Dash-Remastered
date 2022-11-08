@@ -190,6 +190,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -143.84587
       objectReference: {fileID: 0}
+    - target: {fileID: 2413493676502816651, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1500377783}
+    - target: {fileID: 2413493676502816651, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413493676502816651, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Game.AudioSettings, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2413493677123578037, guid: 492fb9e4dfb152247b25322791555358, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.49995
@@ -229,6 +241,18 @@ PrefabInstance:
     - target: {fileID: 2413493677880467878, guid: 492fb9e4dfb152247b25322791555358, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.49995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413493677899406422, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1500377783}
+    - target: {fileID: 2413493677899406422, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413493677899406422, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Game.AudioSettings, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2413493677899406423, guid: 492fb9e4dfb152247b25322791555358, type: 3}
       propertyPath: m_AnchorMax.y
@@ -370,6 +394,18 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 1727098751}
+    - target: {fileID: 4813527866087405799, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.50442505
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879866886451113816, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: iosAdUnitId
+      value: Banner_iOS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879866886451113816, guid: 492fb9e4dfb152247b25322791555358, type: 3}
+      propertyPath: androidAdUnitId
+      value: Banner_Android
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492fb9e4dfb152247b25322791555358, type: 3}
 --- !u!114 &139499458 stripped
@@ -489,7 +525,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3102a004c996b8b4da52a594cd877d99, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7c50b242b25d55448ad2cfa52e0dfe20, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -705,6 +741,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63ecb538ba7a6be409d63a16dd64c5cb, type: 3}
+--- !u!114 &1500377783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8156096907113850530, guid: 63ecb538ba7a6be409d63a16dd64c5cb, type: 3}
+  m_PrefabInstance: {fileID: 1500377781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f42629b9e141114f9235edd37ecc4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1522447859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5069448022166541955, guid: a6cd15db7094acd44b3fc21a025a2815, type: 3}
       propertyPath: timePerAd
-      value: 200
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5069448022166541955, guid: a6cd15db7094acd44b3fc21a025a2815, type: 3}
       propertyPath: delayAfterReachingEndLevel

@@ -218,6 +218,7 @@ public class Player : MonoBehaviour
         Debug.Log("End level");
         inEndLevel = true;
         onEndGame?.Invoke();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         //AdsManager.instance.ShowAdWithDelay();
     }
 

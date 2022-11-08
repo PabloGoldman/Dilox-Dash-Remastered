@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429c639a5a31e4686906143d6895239a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  androidAdUnitId: 4983844
-  iosAdUnitId: 4983845
-  iosGameId: 
-  androidGameId: 
+  androidAdUnitId: Interstitial_Android
+  iosAdUnitId: Interstitial_iOS
+  iosGameId: 4983844
+  androidGameId: 4983845
   bannerAdAnchor: 0
   bannerSize: 0
