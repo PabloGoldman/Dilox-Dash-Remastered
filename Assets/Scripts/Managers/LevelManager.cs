@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     {
         player = FindObjectOfType<Player>();
         endGamePanel.SetActive(false);
+        coinParticles = GameObject.Find("Coin Particles").GetComponent<ParticleSystem>();
     }
 
     void Start()
