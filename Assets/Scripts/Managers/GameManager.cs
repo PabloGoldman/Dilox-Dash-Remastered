@@ -81,9 +81,12 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void UnlockLevel(int index)
     {
+        if (levelsLocked[index])
+        {
+            PlayGameAchievements.instance.WinLevelAchievement(index);
+            levelsLocked[index] = false;
+        }
         onLevelUnlocked?.Invoke();
-
-        levelsLocked[index] = false;
     }
 
     public void SetPlayerAvatar(Sprite img)

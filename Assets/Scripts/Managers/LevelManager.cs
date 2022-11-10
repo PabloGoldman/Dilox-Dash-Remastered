@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour, ISaveable
     [SerializeField] GameObject endGamePanel;
     [SerializeField] GameObject pauseButton;
 
+    [SerializeField] ParticleSystem coinParticles;
+    
     Player player;
 
     private void Awake()
@@ -23,6 +25,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         gameCoins = FindObjectsOfType<GameCoin>();
 
         player.onEndGame += EnableEndGameScreen;
+
+        GameCoin.onCoinReached += EnableCoinPartycleSystem;
 
         SaveLoadSystem.instance.Load();
 
@@ -55,6 +59,13 @@ public class LevelManager : MonoBehaviour, ISaveable
     {
         endGamePanel.SetActive(true);
         pauseButton.SetActive(false);
+    }
+
+    void EnableCoinPartycleSystem(Transform spawnPoint)
+    {
+        coinParticles.gameObject.SetActive(true);
+        coinParticles.transform.position = spawnPoint.position;
+        coinParticles.Play();
     }
 
     public object SaveState()

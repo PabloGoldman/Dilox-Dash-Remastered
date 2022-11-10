@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameCoin : MonoBehaviour
@@ -6,6 +7,8 @@ public class GameCoin : MonoBehaviour
     [SerializeField] AudioClip coinSound;
 
     LevelManager levelManager;
+
+    public static Action<Transform> onCoinReached;
 
     public bool isAvailable;
 
@@ -46,6 +49,8 @@ public class GameCoin : MonoBehaviour
                 levelManager.DisableGameCoin(coinIndex);
 
                 isAvailable = false;
+
+                onCoinReached?.Invoke(transform);
 
                 GetComponent<SpriteRenderer>().color = Color.gray;
             }
