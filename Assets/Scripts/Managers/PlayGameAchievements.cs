@@ -13,6 +13,9 @@ public class PlayGameAchievements : MonoBehaviour
 
     public static PlayGameAchievements instance;
 
+    private bool Authenticated;
+
+
     private void Awake()
     {
         if (instance == null)
@@ -25,18 +28,8 @@ public class PlayGameAchievements : MonoBehaviour
             Destroy(gameObject);
         }
 
-        try
-        {
-#if UNITY_ANDROID
-            PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
-            //PlayGamesPlatform.Activate();
-            //Social.localUser.Authenticate(ProcessAuthentication);
-#endif
-        }
-        catch (Exception exception)
-        {
-            Debug.Log(exception);
-        }
+        PlayGamesPlatform.Activate();
+        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
     #endregion
 
@@ -45,50 +38,40 @@ public class PlayGameAchievements : MonoBehaviour
         if (status == SignInStatus.Success)
         {
             // Continue with Play Games Services
+            Authenticated = true;
         }
         else
         {
             // Disable your integration with Play Games Services or show a login button
             // to ask users to sign-in. Clicking it should call
-            //PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication);
+            // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
+            Authenticated = false;
         }
     }
 
     public void WinLevelAchievement(int levelId)
     {
 #if UNITY_ANDROID
-        if (Social.localUser.authenticated)
+        if (Authenticated)
         {
             switch (levelId)
             {
                 case 0:
-                    Social.ReportProgress("CgkIio7pi7oMEAIQAQ", 100f, success => { });
+                    PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_welcome_to_dilox, 100f, success => { });
                     break;
                 case 1:
-                    Social.ReportProgress("CgkIio7pi7oMEAIQAg", 100f, success => { });
+                    PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_stone_age, 100f, success => { });
                     break;
                 case 2:
-                    Social.ReportProgress("CgkIio7pi7oMEAIQAw", 100f, success => { });
+                    PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_time_to_get_serious, 100f, success => { });
                     break;
                 case 3:
-                    Social.ReportProgress("CgkIio7pi7oMEAIQBA", 100f, success => { });
+                    PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_hot_time, 100f, success => { });
                     break;
                 default:
                     break;
             }
         }
 #endif
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
