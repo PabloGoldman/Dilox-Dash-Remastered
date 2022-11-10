@@ -22,10 +22,7 @@ public class GameCoin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!isAvailable)
-        {
-            GetComponent<SpriteRenderer>().color = Color.gray;
-        }
+        SetIfAvailable();
     }
 
     public void SetIfAvailable()

@@ -1185,9 +1185,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1553395810}
     m_Modifications:
+    - target: {fileID: 2705789614355908694, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705789614479102093, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705789615638575524, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705789615815865053, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705789615992170320, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2705789616069715570, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
       propertyPath: m_Name
       value: Coin Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705789616069715580, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2705789616069715583, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
       propertyPath: m_RootOrder
@@ -1195,11 +1219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705789616069715583, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.896059
+      value: -7.4925632
       objectReference: {fileID: 0}
     - target: {fileID: 2705789616069715583, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -30.398159
+      value: -80.727356
       objectReference: {fileID: 0}
     - target: {fileID: 2705789616069715583, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1238,6 +1262,11 @@ PrefabInstance:
 --- !u!4 &239947759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2705789616069715583, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
+  m_PrefabInstance: {fileID: 239947758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &239947760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2705789616069715570, guid: 1372f684acfc47e4c8dbcf25b8894869, type: 3}
   m_PrefabInstance: {fileID: 239947758}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &254357205
@@ -7309,6 +7338,7 @@ MonoBehaviour:
   isCoinAvailable: 010101
   endGamePanel: {fileID: 1236073214}
   pauseButton: {fileID: 2070134212}
+  coinParticles: {fileID: 239947760}
 --- !u!1001 &1564852885
 PrefabInstance:
   m_ObjectHideFlags: 0
