@@ -238,8 +238,10 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("BouncyIce"))
         {
+            BouncyIce bouncyIce = collision.gameObject.GetComponent<BouncyIce>();
             rb.velocity = Vector2.zero;
-            rb.AddForce(Vector2.up * collision.gameObject.GetComponent<BouncyIce>().amountOfBounciness, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * bouncyIce.amountOfBounciness, ForceMode2D.Impulse);
+            source.PlayOneShot(bouncyIce.bouncyIceSound);
         }
     }
 
