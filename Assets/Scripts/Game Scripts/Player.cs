@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -21,13 +22,17 @@ public class Player : MonoBehaviour
     [SerializeField] ParticleSystem deadParticles;
     [SerializeField] ParticleSystem runParticles;
 
+    [SerializeField] ParticleSystem endLevelParticles;
+
+    float secondsAfterWinningLevel = 5f;
+
     Color transparentColor;
 
     float counterToChangeDirection = 0;
 
     bool inEndLevel;
 
-    float initialGravityScale = 6;
+    float initialGravityScale = 6f;
 
     Vector3 spawnPosition;
     Quaternion initialRotation;
@@ -213,13 +218,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    void WinLevel()
+    IEnumerator WinLevel()
     {
-        Debug.Log("End level");
-        inEndLevel = true;
-        onEndGame?.Invoke();
+        endLevelParticles.transform.position = new Vector2(transform.position.x, transform.position.y + 5.7f);
+        endLevelParticles.Play();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        //AdsManager.instance.ShowAdWithDelay();
+        GetComponent<SpriteRenderer>().color = Color.clear;
+        inEndLevel = true;
+        yield return new WaitForSeconds(secondsAfterWinningLevel);
+        onEndGame?.Invoke();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -240,7 +247,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EndLevel"))
         {
-            WinLevel();
+            StartCoroutine(WinLevel());
 
             GameManager.instance.UnlockLevel(collision.GetComponent<EndLevelCollider>().levelToUnlock);
         }
