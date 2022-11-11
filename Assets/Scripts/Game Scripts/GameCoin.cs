@@ -8,7 +8,7 @@ public class GameCoin : MonoBehaviour
 
     LevelManager levelManager;
 
-    public static Action<Transform> onCoinReached;
+    public Action<Transform> onCoinReached;
 
     public bool isAvailable;
 

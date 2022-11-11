@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     [SerializeField] GameObject endGamePanel;
     [SerializeField] GameObject pauseButton;
 
-    [SerializeField] GameObject coinParticles;
+    ParticleSystem coinParticles;
     
     Player player;
 
@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     {
         player = FindObjectOfType<Player>();
         endGamePanel.SetActive(false);
-        //coinParticles = GameObject.Find("Coin Particles").GetComponent<ParticleSystem>();
+        coinParticles = GameObject.Find("Coin Particles").GetComponent<ParticleSystem>();
     }
 
     void Start()
@@ -27,7 +27,10 @@ public class LevelManager : MonoBehaviour, ISaveable
 
         player.onEndGame += EnableEndGameScreen;
 
-        GameCoin.onCoinReached += EnableCoinPartycleSystem;
+        foreach (GameCoin coin in gameCoins)
+        {
+            coin.onCoinReached += EnableCoinPartycleSystem;
+        }
 
         SaveLoadSystem.instance.Load();
 
@@ -64,10 +67,10 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     void EnableCoinPartycleSystem(Transform spawnPoint)
     {
-        //coinParticles.gameObject.SetActive(true);
-        Instantiate(coinParticles, spawnPoint.position, spawnPoint.rotation);
-        //coinParticles.transform.position = spawnPoint.position;
-        //coinParticles.Play();
+        //Instantiate(coinParticles, spawnPoint.position, spawnPoint.rotation);
+        coinParticles.gameObject.SetActive(true);
+        coinParticles.transform.position = spawnPoint.position;
+        coinParticles.Play();
     }
 
     public object SaveState()
