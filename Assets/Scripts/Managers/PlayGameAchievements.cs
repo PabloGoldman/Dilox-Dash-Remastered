@@ -54,7 +54,7 @@ public class PlayGameAchievements : MonoBehaviour
 #if UNITY_ANDROID
         if (Authenticated)
         {
-            switch (levelId)
+            switch (levelId - 1)
             {
                 case 0:
                     PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_welcome_to_dilox, 100f, success => { });
