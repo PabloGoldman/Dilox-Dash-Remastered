@@ -81,11 +81,15 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void UnlockLevel(int index)
     {
-        if (levelsLocked[index])
-        {
-            PlayGameAchievements.instance.WinLevelAchievement(index);
-            levelsLocked[index] = false;
-        }
+        //if (levelsLocked[index])
+        //{
+        //    PlayGameAchievements.instance.WinLevelAchievement(index);
+        //    levelsLocked[index] = false;
+        //}
+
+        PlayGameAchievements.instance.WinLevelAchievement(index);
+        levelsLocked[index] = false;
+
         onLevelUnlocked?.Invoke();
     }
 

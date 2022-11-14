@@ -10,6 +10,11 @@ namespace Game
 
         bool inPause = false;
 
+        private void Awake()
+        {
+            optionsMenu = transform.Find("OptionsPanel").gameObject;
+        }
+
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
