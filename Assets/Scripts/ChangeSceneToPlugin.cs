@@ -9,5 +9,4 @@ public class ChangeSceneToPlugin : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
-
 }

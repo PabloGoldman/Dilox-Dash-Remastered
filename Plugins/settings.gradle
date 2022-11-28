@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Plugin 2022 Goldman"
+rootProject.name = "Plugins2022Benitez"
 include ':app'
 include ':Logger2022'
