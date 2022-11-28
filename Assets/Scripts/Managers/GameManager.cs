@@ -54,6 +54,11 @@ public class GameManager : MonoBehaviour, ISaveable
         return (playerCoins >= amount);
     }
 
+    public void ChangeToSpecificScene(int id)
+    {
+        SceneManager.LoadScene(id);
+    }
+
     public void ChangeToGameplay(int level)
     {
         if (!levelsLocked[level])

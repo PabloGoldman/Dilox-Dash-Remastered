@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PluginTest : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class PluginTest : MonoBehaviour
     private void Start()
     {
         logger.ShowAllLogs();
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void SendLog()
@@ -59,7 +65,7 @@ public abstract class Logger
 
 public class AndroidLogger : Logger
 {
-    const string pluginName = "com.example.PluginTest";
+    const string pluginName = "Logger2022-release";
     string path;
 
     AndroidJavaClass androidLoggerClass;
